@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const router = Router();
-const { getPokemons, getPokemonsByName } = require("./controllers.js");
+const { getPokemonsApi, getPokemonsByName } = require("./controllers.js");
 
 router.get("/", async (req, res) => {
   const { name } = req.query;
@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
     if (name) {
       res.send(await getPokemonsByName(name));
     } else {
-      res.send(await getPokemons());
+      res.send(await getPokemonsApi());
     }
   } catch (error) {
     res.status(500).send(error.message);
