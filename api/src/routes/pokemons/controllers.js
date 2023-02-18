@@ -21,6 +21,19 @@ const getPokemons = async () => {
   }
 };
 
-const getPokemonsByName = () => {};
+const getPokemonsByName = async (name) => {
+  try {
+    const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+    const pokemon = result.data;
+    return {
+      name: pokemon.name,
+      id: pokemon.id,
+      types: result.data.types.map((e) => e.type.name),
+      image: result.data.sprites.other.home,
+    };
+  } catch (error) {
+    throw new Error(error);
+  }
+};
 
 module.exports = { getPokemons, getPokemonsByName };

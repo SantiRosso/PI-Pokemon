@@ -6,7 +6,7 @@ router.get("/", async (req, res) => {
   const { name } = req.query;
   try {
     if (name) {
-      res.send(await getPokemonsByName());
+      res.send(await getPokemonsByName(name));
     } else {
       res.send(await getPokemons());
     }
