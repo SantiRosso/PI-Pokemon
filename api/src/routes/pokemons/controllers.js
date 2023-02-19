@@ -1,10 +1,12 @@
 const axios = require("axios");
-const { Pokemon } = require("../../db.js");
+const { Pokemon, Type } = require("../../db.js");
 
 //api
 const getPokemonsApi = async () => {
   try {
-    const apiResponse = await axios.get("https://pokeapi.co/api/v2/pokemon");
+    const apiResponse = await axios.get(
+      "https://pokeapi.co/api/v2/pokemon?offset=0&limit=251"
+    );
     const allPokemons = apiResponse.data.results;
     const pokemonsDetails = await Promise.all(
       allPokemons.map(async (e) => {
@@ -24,13 +26,24 @@ const getPokemonsApi = async () => {
 };
 
 //db
-const getPokemonsDb = () => {};
+const getPokemonsDb = async () => {
+  try {
+    const pokemonsDb = await Pokemon.findAll();
+    return pokemonsDb;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
 
 //all pokemons
 const getAllPokemons = async () => {
-  const api = await getPokemonsApi();
-  const db = await getPokemonsDb();
-  return [...api, ...db];
+  try {
+    const api = await getPokemonsApi();
+    const db = await getPokemonsDb();
+    return [...api, ...db];
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 const getPokemonsByName = async (name) => {
@@ -40,16 +53,22 @@ const getPokemonsByName = async (name) => {
       where: {
         name: name,
       },
+      include: {
+        model: Type,
+        attributes: ["name"],
+        through: {
+          attributes: [],
+        },
+      },
     });
-
+    //api
     if (pokemonDb) {
       return pokemonDb;
     } else {
-      //api
-      const result = await axios.get(
+      const responseApi = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${name}`
       );
-      const pokemonApi = result.data;
+      const pokemonApi = responseApi.data;
       return {
         name: pokemonApi.name,
         id: pokemonApi.id,
@@ -58,7 +77,7 @@ const getPokemonsByName = async (name) => {
       };
     }
   } catch (error) {
-    throw new Error(error);
+    throw new Error("Pokemon not found!");
   }
 };
 
