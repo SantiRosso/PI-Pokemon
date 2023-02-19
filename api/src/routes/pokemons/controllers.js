@@ -112,7 +112,69 @@ const getPokemonsByIdDb = async (id) => {
   }
 };
 
+const createPokemon = async (
+  name,
+  hp,
+  attack,
+  defense,
+  speed,
+  height,
+  weight,
+  imgUrl,
+  types
+) => {
+  try {
+    if (
+      !name ||
+      !hp ||
+      !attack ||
+      !defense ||
+      !speed ||
+      !height ||
+      !weight ||
+      !types
+    )
+      throw new Error("Missing parameters");
+    if (!imgUrl)
+      imgUrl =
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fes%2Fsearch%3Fq%3Dpokeball&psig=AOvVaw1d7X1dHMtjnB2HoQo5Atve&ust=1676919037255000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJi6l66gov0CFQAAAAAdAAAAABAJ";
+
+    const [pokemon, created] = await Pokemon.findOrCreate({
+      where: {
+        name: {
+          [Op.iLike]: `%${name}%`,
+        },
+      },
+      defaults: {
+        name,
+        hp,
+        attack,
+        defense,
+        speed,
+        height,
+        weight,
+        imgUrl,
+      },
+    });
+
+    const typeOrTypes = await Type.findAll({
+      where: {
+        name: types,
+      },
+    });
+
+    if (created) {
+      throw new Error("This name is already used.");
+    } else {
+      await pokemon.addType(typeOrTypes);
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 module.exports = {
+  createPokemon,
   getAllPokemons,
   getPokemonsByName,
   getPokemonsByIdApi,

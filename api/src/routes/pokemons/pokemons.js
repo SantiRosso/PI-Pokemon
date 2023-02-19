@@ -5,6 +5,7 @@ const {
   getPokemonsByName,
   getPokemonsByIdDb,
   getPokemonsByIdApi,
+  createPokemon,
 } = require("./controllers.js");
 
 router.get("/", async (req, res) => {
@@ -30,6 +31,27 @@ router.get("/:id", async (req, res) => {
     }
   } catch (error) {
     res.status(404).send(error.message);
+  }
+});
+
+router.post("/", async (req, res) => {
+  const { name, hp, attack, defense, speed, height, weight, imgUrl, types } =
+    req.body;
+  try {
+    await createPokemon(
+      name,
+      hp,
+      attack,
+      defense,
+      speed,
+      height,
+      weight,
+      imgUrl,
+      types
+    );
+    res.sendStatus(204);
+  } catch (error) {
+    res.status(500).send(error.message);
   }
 });
 
