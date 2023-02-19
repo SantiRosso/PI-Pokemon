@@ -99,4 +99,22 @@ const getPokemonsByIdApi = async (id) => {
   }
 };
 
-module.exports = { getAllPokemons, getPokemonsByName, getPokemonsByIdApi };
+const getPokemonsByIdDb = async (id) => {
+  try {
+    const pokemon = await Pokemon.findOne({
+      where: {
+        id,
+      },
+    });
+    return pokemon;
+  } catch (error) {
+    throw new Error("Pokemon not found!");
+  }
+};
+
+module.exports = {
+  getAllPokemons,
+  getPokemonsByName,
+  getPokemonsByIdApi,
+  getPokemonsByIdDb,
+};
