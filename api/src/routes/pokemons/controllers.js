@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { response } = require("../../app.js");
+const { Op } = require("sequelize");
 const { Pokemon, Type } = require("../../db.js");
 
 //api
@@ -138,14 +138,15 @@ const createPokemon = async (
     if (!imgUrl)
       imgUrl =
         "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fes%2Fsearch%3Fq%3Dpokeball&psig=AOvVaw1d7X1dHMtjnB2HoQo5Atve&ust=1676919037255000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJi6l66gov0CFQAAAAAdAAAAABAJ";
-
-    const [pokemon, created] = await Pokemon.findOrCreate({
+    const nameUsed = await Pokemon.findOne({
       where: {
-        name: {
-          [Op.iLike]: `%${name}%`,
-        },
+        name,
       },
-      defaults: {
+    });
+    if (nameUsed) {
+      throw new Error("This name is already used.");
+    } else {
+      const pokemon = await Pokemon.create({
         name,
         hp,
         attack,
@@ -154,18 +155,14 @@ const createPokemon = async (
         height,
         weight,
         imgUrl,
-      },
-    });
+      });
 
-    const typeOrTypes = await Type.findAll({
-      where: {
-        name: types,
-      },
-    });
+      const typeOrTypes = await Type.findAll({
+        where: {
+          name: types,
+        },
+      });
 
-    if (created) {
-      throw new Error("This name is already used.");
-    } else {
       await pokemon.addType(typeOrTypes);
     }
   } catch (error) {
