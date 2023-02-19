@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const router = Router();
-const {} = require("./controllers.js");
+const { getTypes } = require("./controllers.js");
 
 router.get("/", async (req, res) => {
   try {
