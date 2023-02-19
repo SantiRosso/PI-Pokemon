@@ -1,6 +1,11 @@
 const { Router } = require("express");
 const router = Router();
-const { getAllPokemons, getPokemonsByName } = require("./controllers.js");
+const {
+  getAllPokemons,
+  getPokemonsByName,
+  getPokemonsByIdDb,
+  getPokemonsByIdApi,
+} = require("./controllers.js");
 
 router.get("/", async (req, res) => {
   const { name } = req.query;
@@ -11,7 +16,20 @@ router.get("/", async (req, res) => {
       res.send(await getAllPokemons());
     }
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(404).send(error.message);
+  }
+});
+
+router.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    if (id.includes("-")) {
+      res.send(await getPokemonsByIdDb(id));
+    } else {
+      res.send(await getPokemonsByIdApi(id));
+    }
+  } catch (error) {
+    res.status(404).send(error.message);
   }
 });
 

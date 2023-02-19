@@ -1,4 +1,5 @@
 const axios = require("axios");
+const { response } = require("../../app.js");
 const { Pokemon, Type } = require("../../db.js");
 
 //api
@@ -81,4 +82,21 @@ const getPokemonsByName = async (name) => {
   }
 };
 
-module.exports = { getAllPokemons, getPokemonsByName };
+const getPokemonsByIdApi = async (id) => {
+  try {
+    const responseApi = await axios.get(
+      `https://pokeapi.co/api/v2/pokemon/${id}`
+    );
+    const pokemon = responseApi.data;
+    return {
+      name: pokemon.name,
+      id: pokemon.id,
+      types: pokemon.types.map((e) => e.type.name),
+      image: pokemon.sprites.other.home,
+    };
+  } catch (error) {
+    throw new Error("Pokemon not found!");
+  }
+};
+
+module.exports = { getAllPokemons, getPokemonsByName, getPokemonsByIdApi };
