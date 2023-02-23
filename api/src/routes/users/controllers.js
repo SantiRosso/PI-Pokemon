@@ -13,4 +13,16 @@ const getUser = async (id) => {
   }
 };
 
-module.exports = { getUser };
+const deleteUser = async (id) => {
+  try {
+    await User.destroy({
+      where: {
+        id,
+      },
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+module.exports = { getUser, deleteUser };
