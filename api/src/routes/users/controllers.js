@@ -13,6 +13,15 @@ const getUser = async (id) => {
   }
 };
 
+const getUsers = async () => {
+  try {
+    const users = await User.findAll();
+    return users;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 const deleteUser = async (id) => {
   try {
     await User.destroy({
@@ -25,4 +34,4 @@ const deleteUser = async (id) => {
   }
 };
 
-module.exports = { getUser, deleteUser };
+module.exports = { getUser, deleteUser, getUsers };
