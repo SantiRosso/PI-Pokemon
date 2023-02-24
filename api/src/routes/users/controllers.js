@@ -34,4 +34,39 @@ const deleteUser = async (id) => {
   }
 };
 
-module.exports = { getUser, deleteUser, getUsers };
+const createUser = async (
+  name,
+  email,
+  password,
+  image,
+  country,
+  age,
+  sex,
+  favType
+) => {
+  try {
+    let allUsers = await getUsers();
+    allUsers.map((e) => {
+      if (e.name === name) {
+        return res.send({ message: "error name" });
+      }
+      if (e.email === email) {
+        return res.send({ message: "error email" });
+      }
+    });
+    await User.create({
+      name,
+      email,
+      password,
+      image,
+      country,
+      age,
+      sex,
+      favType,
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+module.exports = { getUser, deleteUser, getUsers, createUser };
