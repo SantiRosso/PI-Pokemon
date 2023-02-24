@@ -69,4 +69,35 @@ const createUser = async (
   }
 };
 
-module.exports = { getUser, deleteUser, getUsers, createUser };
+const updateUser = async (
+  name,
+  email,
+  password,
+  image,
+  country,
+  age,
+  sex,
+  favType
+) => {
+  try {
+    let user = await User.findOne({
+      where: {
+        id,
+      },
+    });
+
+    user.name = name;
+    user.email = email;
+    user.password = password;
+    user.image = image;
+    user.country = country;
+    user.age = age;
+    user.sex = sex;
+    user.favType = favType;
+    user.save();
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+module.exports = { getUser, deleteUser, getUsers, createUser, updateUser };

@@ -5,6 +5,7 @@ const {
   getUsers,
   deleteUser,
   createUser,
+  updateUser,
 } = require("./controllers.js");
 
 router.get("/:id", async (req, res) => {
@@ -37,7 +38,17 @@ router.delete("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   const { name, email, password, image, country, age, sex, favType } = req.body;
   try {
-    await createUser();
+    await createUser(name, email, password, image, country, age, sex, favType);
+    res.sendStatus(204);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+router.put("/", async (req, res) => {
+  const { name, email, password, image, country, age, sex, favType } = req.body;
+  try {
+    await updateUser(name, email, password, image, country, age, sex, favType);
     res.sendStatus(204);
   } catch (error) {
     res.status(500).send(error.message);
