@@ -9,7 +9,7 @@ const rootReducer = (state = initialState, action) => {
     case GET_ALL_POKEMONS:
       return {
         ...state,
-        pokemon: action.payload,
+        pokemons: action.payload,
       };
     default:
       return { ...state };
