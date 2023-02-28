@@ -17,6 +17,12 @@ const getPokemonsApi = async () => {
           id: result.data.id,
           types: result.data.types.map((e) => e.type.name),
           image: result.data.sprites.other.home,
+          hp: result.data.stats[0].base_stat,
+          attack: result.data.stats[1].base_stat,
+          defense: result.data.stats[2].base_stat,
+          speed: result.data.stats[5].base_stat,
+          height: result.data.height,
+          weight: result.data.weight,
         };
       })
     );
