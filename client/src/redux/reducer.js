@@ -14,7 +14,7 @@ const rootReducer = (state = initialState, action) => {
     case GET_POKEMON_BY_NAME:
       return {
         ...state,
-        pokemons: action.payload,
+        pokemons: [action.payload],
       };
     default:
       return { ...state };
