@@ -21,10 +21,12 @@ const Home = () => {
             <Link to="/create-pokemon">
                 <h1>Create Pokemon</h1>
             </Link>
+            <Link to="/">
+                <h1>Login/Register</h1>
+            </Link>
+            <h1>Logout</h1>
+            <h1>Footer</h1>
         </div>
-        //filtros
-        //Cards
-        // <Footer/>
     )
 }
 

@@ -10,5 +10,5 @@ const LoginRegister = () => {
         </div>
     )
 }
-
+//footer
 export default LoginRegister;

@@ -8,5 +8,5 @@ const Profile = () => {
         </div>
     )
 }
-
+//footer
 export default Profile;

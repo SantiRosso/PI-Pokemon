@@ -29,5 +29,5 @@ const PokemonDetail = () => {
         </div>
     )
 }
-
+//footer
 export default PokemonDetail;

@@ -27,5 +27,5 @@ const Pokemons = () => {
         </div>
     )
 }
-
+//filtros - lazyloading o paginado - footer
 export default Pokemons;

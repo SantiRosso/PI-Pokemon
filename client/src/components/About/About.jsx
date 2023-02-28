@@ -8,5 +8,6 @@ const About = () => {
         </div>
     )
 }
+//footer
 
 export default About;

@@ -8,5 +8,5 @@ const Foro = () => {
         </div>
     )
 }
-
+//footer
 export default Foro;

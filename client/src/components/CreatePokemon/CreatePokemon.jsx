@@ -8,5 +8,5 @@ const CreatePokemon = () => {
         </div>
     )
 }
-
+//footer
 export default CreatePokemon;
