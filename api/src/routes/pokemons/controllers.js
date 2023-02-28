@@ -17,15 +17,10 @@ const getPokemonsApi = async () => {
           id: result.data.id,
           types: result.data.types.map((e) => e.type.name),
           image: result.data.sprites.other.home,
-          hp: result.data.stats[0].base_stat,
-          attack: result.data.stats[1].base_stat,
-          defense: result.data.stats[2].base_stat,
-          speed: result.data.stats[5].base_stat,
-          height: result.data.height,
-          weight: result.data.weight,
         };
       })
     );
+    console.log(pokemonsDetails);
     return pokemonsDetails;
   } catch (error) {
     throw new Error(error);
@@ -99,6 +94,12 @@ const getPokemonsByIdApi = async (id) => {
       id: pokemon.id,
       types: pokemon.types.map((e) => e.type.name),
       image: pokemon.sprites.other.home,
+      hp: pokemon.stats[0].base_stat,
+      attack: pokemon.stats[1].base_stat,
+      defense: pokemon.stats[2].base_stat,
+      speed: pokemon.stats[5].base_stat,
+      height: pokemon.height,
+      weight: pokemon.weight,
     };
   } catch (error) {
     throw new Error("Pokemon not found!");
