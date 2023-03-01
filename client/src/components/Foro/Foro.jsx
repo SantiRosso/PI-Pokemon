@@ -1,3 +1,5 @@
+//components
+import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar"
 
 const Foro = () => {
@@ -5,8 +7,8 @@ const Foro = () => {
         <div>
             <NavBar/>
             <h1>Foro</h1>
+            <Footer/>
         </div>
     )
 }
-//footer
 export default Foro;

@@ -1,3 +1,5 @@
+//components
+import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
 
 const Profile = () => {
@@ -5,8 +7,8 @@ const Profile = () => {
         <div>
             <NavBar/>
             <h1>Profile</h1>
+            <Footer/>
         </div>
     )
 }
-//footer
 export default Profile;

@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPokemons } from "../../redux/actions";
+//components
 import NavBar from "../NavBar/NavBar";
 import Card from "../Card/Card"
+import Footer from "../Footer/Footer";
 
 const Pokemons = () => {
     const dispatch = useDispatch()
@@ -24,8 +26,9 @@ const Pokemons = () => {
                     )
                 })
             }
+            <Footer/>
         </div>
     )
 }
-//filtros - lazyloading o paginado - footer
+//filtros - lazyloading o paginado
 export default Pokemons;

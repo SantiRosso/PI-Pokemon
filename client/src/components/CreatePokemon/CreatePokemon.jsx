@@ -1,3 +1,5 @@
+//components
+import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
 
 const CreatePokemon = () => {
@@ -5,8 +7,8 @@ const CreatePokemon = () => {
         <div>
             <NavBar/>
             <h1>Create Pokemon</h1>
+            <Footer/>
         </div>
     )
 }
-//footer
 export default CreatePokemon;

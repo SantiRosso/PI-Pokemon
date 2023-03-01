@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import NavBar from "../NavBar/NavBar";
 import axios from "axios";
+//components
+import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 
 const PokemonDetail = () => {
     const id = useParams()
@@ -26,8 +28,8 @@ const PokemonDetail = () => {
             <h1>SPEED: {detail?.speed}</h1>
             <h1>HEIGHT: {detail?.height}</h1>
             <h1>WEIGHT: {detail?.weight}</h1>
+            <Footer/>
         </div>
     )
 }
-//footer
 export default PokemonDetail;

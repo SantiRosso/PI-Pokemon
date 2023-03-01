@@ -1,5 +1,7 @@
-import s from "./NavBar.module.css";
 import { Link } from "react-router-dom";
+//styles
+import s from "./NavBar.module.css";
+//components
 import SearchBar from "../SearchBar/SearchBar";
 
 const NavBar = () => {
@@ -11,7 +13,6 @@ const NavBar = () => {
             <SearchBar/>
             <h1>Desplegable</h1>
         </div>
-        // <SearchBar/>
     )
 }
 

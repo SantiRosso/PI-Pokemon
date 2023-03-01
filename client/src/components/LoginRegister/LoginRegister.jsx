@@ -1,4 +1,6 @@
 import {Link} from "react-router-dom"
+//components
+import Footer from "../Footer/Footer";
 
 const LoginRegister = () => {
     return(
@@ -7,8 +9,8 @@ const LoginRegister = () => {
             <Link to="/home">
                 <h1>Home</h1>
             </Link>
+            <Footer/>
         </div>
     )
 }
-//footer
 export default LoginRegister;
