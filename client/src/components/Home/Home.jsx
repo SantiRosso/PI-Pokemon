@@ -1,5 +1,6 @@
 import NavBar from "../NavBar/NavBar";
 import {Link} from "react-router-dom"
+import Footer from "../Footer/Footer";
 
 const Home = () => {
     return(
@@ -25,7 +26,7 @@ const Home = () => {
                 <h1>Login/Register</h1>
             </Link>
             <h1>Logout</h1>
-            <h1>Footer</h1>
+            <Footer/>
         </div>
     )
 }
