@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPokemons } from "../../redux/actions";
 import { useNavigate } from "react-router-dom";
+//styles
+import s from "./Pokemons.module.css"
 //components
 import NavBar from "../NavBar/NavBar";
 import Card from "../Card/Card"
@@ -24,15 +26,20 @@ const Pokemons = () => {
     return(
         <div>
             <NavBar/>
+
             <button onClick={handleClickBack}>Back</button>
-            <h1>Pokemons</h1>
-            {
-                pokemons?.map((e, i) => {
-                    return(
-                        <Card key={i} id={e.id} name={e.name} types={e.types} image={e.image?.front_default || "https://w7.pngwing.com/pngs/620/521/png-transparent-poke-ball-pokemon-pokemon-rim-mobile-phones-pokemon.png"}/>
-                    )
-                })
-            }
+            <div className={s.title}>
+                <h1>Pokemons</h1>
+            </div>
+            <div className={s.pokemonsContainer}>
+                {
+                    pokemons?.map((e, i) => {
+                        return(
+                            <Card key={i} id={e.id} name={e.name} types={e.types} image={e.image?.front_default || "https://w7.pngwing.com/pngs/620/521/png-transparent-poke-ball-pokemon-pokemon-rim-mobile-phones-pokemon.png"}/>
+                        )
+                    })
+                }  
+            </div>
             <Footer/>
         </div>
     )
