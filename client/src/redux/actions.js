@@ -1,4 +1,5 @@
 import axios from "axios";
+import { showMessage } from "../ShowMessage";
 
 export const GET_ALL_POKEMONS = "GET_ALL_POKEMONS";
 export const GET_POKEMON_BY_NAME = "GET_POKEMON_BY_NAME";
@@ -18,7 +19,7 @@ export const getPokemonByName = (name) => {
       );
       return dispatch({ type: GET_POKEMON_BY_NAME, payload: result.data });
     } catch (error) {
-      alert("Pokemon not found.");
+      showMessage("Pokemon not found.", "error");
     }
   };
 };
