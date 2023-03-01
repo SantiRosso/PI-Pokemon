@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPokemons } from "../../redux/actions";
+import { useNavigate } from "react-router-dom";
 //components
 import NavBar from "../NavBar/NavBar";
 import Card from "../Card/Card"
@@ -9,15 +10,21 @@ import Footer from "../Footer/Footer";
 const Pokemons = () => {
     const dispatch = useDispatch()
     const pokemons = useSelector((state) => state.pokemons)
+    const navigate = useNavigate()
 
     useEffect(()=>{
         if(!pokemons.length)
         dispatch(getAllPokemons())
     },[dispatch])
 
+    const handleClickBack = () => {
+        navigate("/home");
+    }
+
     return(
         <div>
             <NavBar/>
+            <button onClick={handleClickBack}>Back</button>
             <h1>Pokemons</h1>
             {
                 pokemons?.map((e, i) => {
