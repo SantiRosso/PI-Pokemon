@@ -1,8 +1,19 @@
-.pokemonsContainer{
+/* .pokemonsContainer{
     border: 1px solid red;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-row-gap: 10px;
+    margin: 2%;
+    padding: 10px;
+    width: 96%;
+} */
+
+.pokemonsContainer{
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
     margin: 2%;
     padding: 10px;
     width: 96%;
