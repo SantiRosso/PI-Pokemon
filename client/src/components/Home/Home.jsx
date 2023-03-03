@@ -2,6 +2,7 @@ import {Link} from "react-router-dom"
 //components
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
+import CreatePokemonModal from "../Modals/CreatePokemonModal"
 
 const Home = () => {
     return(
@@ -20,9 +21,10 @@ const Home = () => {
             <Link to="/about">
                 <h1>About</h1>
             </Link>
-            <Link to="/create-pokemon">
+            {/* <Link to="/create-pokemon">
                 <h1>Create Pokemon</h1>
-            </Link>
+            </Link> */}
+            <CreatePokemonModal/>
             <Link to="/">
                 <h1>Login/Register</h1>
             </Link>

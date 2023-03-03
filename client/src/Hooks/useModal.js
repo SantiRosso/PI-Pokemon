@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { showMessage } from "../showMessage.js";
+import { showMessage } from "../ShowMessage.js";
 
 export const useModal = (initialValue = false) => {
   const [isOpen, setIsOpen] = useState(initialValue);
