@@ -1,5 +1,18 @@
 .navBar{
+    height: 6vh;
     background-color: rgb(215, 215, 215);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.image{
+    height: 80%;
+    width: 15%;
+    transition: .5s;
+}
+
+.image:hover{
+    border-radius: 5px;
+    background-color: rgb(134, 133, 133);
 }
