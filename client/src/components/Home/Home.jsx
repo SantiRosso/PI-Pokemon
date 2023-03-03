@@ -3,11 +3,13 @@ import {useNavigate} from "react-router-dom"
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import CreatePokemonModal from "../Modals/CreatePokemonModal"
+//styles
+import s from "./Home.module.css"
 
 const Home = () => {
     const navigate = useNavigate()
     return(
-        <div>
+        <div className={s.home}>
             <NavBar/>
             {/* NAME OF PAGE */}
             <div>
