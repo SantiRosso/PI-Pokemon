@@ -8,6 +8,7 @@ import s from "./Pokemons.module.css"
 import NavBar from "../NavBar/NavBar";
 import Card from "../Card/Card"
 import Footer from "../Footer/Footer";
+import SearchBar from "../SearchBar/SearchBar"
 
 const Pokemons = () => {
     const dispatch = useDispatch()
@@ -28,6 +29,7 @@ const Pokemons = () => {
             <NavBar/>
 
             <button onClick={handleClickBack}>Back</button>
+            <SearchBar/>
             <div className={s.title}>
                 <h1>Pokemons</h1>
             </div>

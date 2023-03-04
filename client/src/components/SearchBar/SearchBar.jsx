@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getPokemonByName } from "../../redux/actions";
 import { useNavigate } from "react-router-dom"
+//styles
+import s from "./SearchBar.module.css"
 
 const SearchBar = () => {
 
@@ -19,8 +21,8 @@ const SearchBar = () => {
     }
 
     return(
-        <div>
-            <input type="text" onChange={handleChange}/>
+        <div className={s.searchBar}>
+            <input type="text" placeholder="Search pokemon" onChange={handleChange}/>
             <button onClick={handleClick}>SEARCH</button>
         </div>
     )

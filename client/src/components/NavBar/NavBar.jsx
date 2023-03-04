@@ -4,7 +4,7 @@ import pokedex from "./pokedex.png"
 //styles
 import s from "./NavBar.module.css";
 //components
-import SearchBar from "../SearchBar/SearchBar";
+// import SearchBar from "../SearchBar/SearchBar";
 
 const NavBar = () => {
     return(
@@ -13,8 +13,11 @@ const NavBar = () => {
                 {/* <h1>Pokedex</h1> */}
                 <img src={pokedex} alt="pokedex" className={s.image}/>
             </Link>
-            <SearchBar/>
-            <h1>Desplegable</h1>
+            {/* <SearchBar/> */}
+            <div>
+                <button>Desplegable</button>
+            </div>
+            
         </div>
     )
 }
