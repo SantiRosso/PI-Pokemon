@@ -42,7 +42,7 @@ const Pokemons = () => {
                     })
                 }  
             </div>
-            <Footer/>
+                <Footer/> 
         </div>
     )
 }

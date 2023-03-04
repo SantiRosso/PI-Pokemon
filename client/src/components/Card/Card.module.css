@@ -1,11 +1,18 @@
 .card{
-    border: 1px solid green;
+    background-color: rgb(219, 209, 209);
+    border: 1px solid rgb(13, 13, 13);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 45vh;
     width: 30vh;
+    overflow: hidden;
 }
 
 .image{
-    width: 100%;
+    width: 95%;
     height: 65%;
     object-fit: cover;
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 //components
 import NavBar from "../NavBar/NavBar";
@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 
 const PokemonDetail = () => {
     const id = useParams()
+    const navigate = useNavigate()
     const [detail, setDetail] = useState();
 
     useEffect(() => {
@@ -14,11 +15,15 @@ const PokemonDetail = () => {
         .then(response => setDetail(response.data))
     },[id])
 
+    const handleClickBack = () => {
+        navigate("/pokemons")
+    }
 
     console.log(detail)
     return(
         <div>
             <NavBar/>
+            <button onClick={handleClickBack}>Back</button>
             <h1>{detail?.name}</h1>
             <h1>TYPES: {detail?.types}</h1>
             <img src={detail?.image.front_default} alt={detail?.name} />
