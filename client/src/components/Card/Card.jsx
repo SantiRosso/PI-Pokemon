@@ -5,19 +5,23 @@ import s from "./Card.module.css"
 const Card = ({name, types, image, id}) => {
 
     return(
-        <div className={s.card}>
-            <img src={image} alt={name} className={s.image}/>
-            <Link to={`/pokemon-detail/${id}`}>
-                <h4>{name}</h4>
-            </Link>
-            {
-                types?.map((e) => {
-                    return(
-                        <span>{e}</span>
-                    )
-                })
-            }
-        </div>
+        <Link className={s.link} to={`/pokemon-detail/${id}`}>
+            <div className={s.card}>
+                
+                <div className={s.divImage}>
+                    <img src={image} alt={name} className={s.image}/>
+                </div>
+                
+                <h4>{name.toUpperCase()}</h4>
+                {
+                    types?.map((e) => {
+                        return(
+                            <span>{e.toUpperCase()}</span>
+                        )
+                    })
+                }
+            </div>
+        </Link>
     )
 }
 export default Card;
