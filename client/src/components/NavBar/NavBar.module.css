@@ -1,9 +1,16 @@
 .navBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 6vh;
-    background-color: rgb(215, 215, 215);
+    background-image: linear-gradient(to right top, #000000, #41101d, #800929, #c10029, #ff0017);
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    overflow: hidden;
 }
 
 .image{
@@ -13,6 +20,6 @@
 }
 
 .image:hover{
-    border-radius: 5px;
-    background-color: rgb(134, 133, 133);
+    height: 100%;
+    width: 35%;
 }

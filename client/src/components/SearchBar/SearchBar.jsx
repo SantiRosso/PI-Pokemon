@@ -22,8 +22,8 @@ const SearchBar = () => {
 
     return(
         <div className={s.searchBar}>
-            <input type="text" placeholder="Search pokemon" onChange={handleChange}/>
-            <button onClick={handleClick}>SEARCH</button>
+            <input type="text" placeholder="Search pokemon" className={s.input} onChange={handleChange}/>
+            <button className={s.button} onClick={handleClick}>SEARCH</button>
         </div>
     )
 }
