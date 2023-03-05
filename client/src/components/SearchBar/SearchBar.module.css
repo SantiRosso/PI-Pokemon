@@ -2,3 +2,37 @@
     display: flex;
     justify-content: center;
 }
+
+.input{
+    height: 50px;
+    width: 300px;
+    margin-right: 10px;
+    background-image: linear-gradient(to right top, #f5f5f5, #e2e2e2, #d0cfd0, #bebdbd, #acabab);;
+    border-radius: 10px;
+    border: none;
+    transition: .5s;
+    font-size: large;
+    border: 2px solid white;
+}
+
+.input:hover{
+    background-image: linear-gradient(to right top, #000000, #41101d, #800929, #c10029, #ff0017);
+    color: #f5f5f5;
+    border: 2px solid black;
+}
+
+.button{
+    
+    background-image: linear-gradient(to right top, #f5f5f5, #e2e2e2, #d0cfd0, #bebdbd, #acabab);
+    border-radius: 10px;
+    border: none;
+    transition: .5s;
+    font-size: large;
+    border: 2px solid white;
+}
+
+.button:hover{
+    background-image: linear-gradient(to right top, #000000, #41101d, #800929, #c10029, #ff0017);
+    color: #f5f5f5;
+    border: 2px solid black;
+}
