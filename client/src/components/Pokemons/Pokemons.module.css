@@ -9,7 +9,6 @@
 } */
 
 .pokemonsContainer{
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

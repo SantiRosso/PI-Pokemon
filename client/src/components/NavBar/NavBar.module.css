@@ -4,6 +4,7 @@
     left: 0;
     right: 0;
     height: 6vh;
+    z-index: 11;
     background-image: linear-gradient(to right top, #000000, #41101d, #800929, #c10029, #ff0017);
     border-bottom-left-radius: 20%;
     border-bottom-right-radius: 20%;
