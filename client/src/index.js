@@ -7,7 +7,11 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
+//chakra
+// import { ChakraProvider } from "@chakra-ui/react";
+
 ReactDOM.render(
+  // <ChakraProvider>
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
@@ -15,6 +19,8 @@ ReactDOM.render(
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
+  // </ChakraProvider>,
+
   document.getElementById("root")
 );
 
