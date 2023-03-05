@@ -8,17 +8,25 @@
     align-items: center;
     height: 45vh;
     width: 30vh;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .card:hover{
     border: 2px solid white;
+    overflow: visible;
 }
 
 .card:hover .image{
     width: 150%;
     height: 150%;
     z-index: 10;
+}
+
+.card:hover .types{
+    width: 150%;
+    height: 150%;
+    z-index: 10;
+    display: none;
 }
 
 .divImage{

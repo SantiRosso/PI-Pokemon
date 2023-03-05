@@ -6,6 +6,8 @@ import CreatePokemonModal from "../Modals/CreatePokemonModal"
 import SearchBar from "../SearchBar/SearchBar"
 //styles
 import s from "./Home.module.css"
+//images
+import pokedex from "./pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 
 const Home = () => {
     const navigate = useNavigate()
@@ -13,8 +15,8 @@ const Home = () => {
         <div className={s.home}>
             <NavBar/>
             {/* NAME OF PAGE */}
-            <div>
-                POKEDEX 
+            <div className={s.title}>
+                <img src={pokedex} alt="Pokedex" /> 
             </div>
             {/* CARDS */}
             <SearchBar/>

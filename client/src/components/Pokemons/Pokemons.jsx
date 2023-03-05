@@ -9,6 +9,8 @@ import NavBar from "../NavBar/NavBar";
 import Card from "../Card/Card"
 import Footer from "../Footer/Footer";
 import SearchBar from "../SearchBar/SearchBar"
+//images
+import pokedex from "../Home/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 
 const Pokemons = () => {
     const dispatch = useDispatch()
@@ -27,12 +29,11 @@ const Pokemons = () => {
     return(
         <div>
             <NavBar/>
-
             <button onClick={handleClickBack}>Back</button>
-            <SearchBar/>
             <div className={s.title}>
-                <h1>Pokemons</h1>
+                <img src={pokedex} alt="Pokedex" /> 
             </div>
+            <SearchBar/>
             <div className={s.pokemonsContainer}>
                 {
                     pokemons?.map((e, i) => {

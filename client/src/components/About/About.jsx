@@ -2,6 +2,10 @@ import { useNavigate } from "react-router-dom"
 //components
 import NavBar from "../NavBar/NavBar"
 import Footer from "../Footer/Footer"
+//styles
+import s from "./About.module.css"
+//images
+import pokedex from "../Home/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 
 const About = () => {
     const navigate = useNavigate() 
@@ -14,6 +18,9 @@ const About = () => {
         <div>
             <NavBar/>
             <button onClick={handleClickBack}>Back</button>
+            <div className={s.title}>
+                <img src={pokedex} alt="Pokedex" /> 
+            </div>
             <h1>About</h1>
             <Footer/>
         </div>
