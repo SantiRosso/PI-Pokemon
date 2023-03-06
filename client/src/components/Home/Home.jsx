@@ -8,6 +8,13 @@ import HomeCard from "../HomeCard/HomeCard"
 import s from "./Home.module.css"
 //images
 import pokedex from "./pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+import pokedex2 from "./pokedex2.png"
+import pikachu from "./pikachu.jpg"
+import pokeball from "./pokeball.png"
+import charmander from "./charmander.jpg"
+import pokemons from "./pokemons.jpg"
+import foro from "./foro.png"
+import logout1 from "./logout.png"
 
 const Home = () => {
 
@@ -24,15 +31,15 @@ const Home = () => {
             </div>
             {/* CARDS */}
             <SearchBar/>
-            <HomeCard name="Pokemons" image="#" route="/pokemons" />
-            <HomeCard name="Profile" image="#" route="/profile" />
-            <HomeCard name="Foro" image="#" route="/foro" />
-            <HomeCard name="About" image="#" route="/about" />
-            <HomeCard name="Login/Register" image="#" route="/" />
-            <HomeCard name="Logout" image="#" route="" onClick={logout}/>
+            <HomeCard name="Pokemons" image={pokemons} route="/pokemons" />
+            <HomeCard name="Profile" image={pikachu} route="/profile" />
+            <HomeCard name="Foro" image={foro} route="/foro" />
+            <HomeCard name="About" image={charmander} route="/about" />
+            <HomeCard name="Login/Register" image={pokedex2} route="/" />
+            <HomeCard name="Logout" image={logout1} route="" onClick={logout}/>
             {/* <HomeCard name="Create Pokemon" image="#" route="create-pokemon" /> */}
             <div>
-                <img src="#" alt="Create Pokemon" />
+                <img src={pokeball} alt="Create Pokemon" />
                 <CreatePokemonModal/>
             </div>
             <Footer/>

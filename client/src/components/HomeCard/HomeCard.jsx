@@ -1,6 +1,9 @@
 import {useNavigate} from "react-router-dom"
 //components
 import Button from "../Button/Button"
+//styles
+import s from "./HomeCard.module.css"
+
 
 const HomeCard = ({name, image, route, onClick}) => {
 
@@ -15,8 +18,8 @@ const HomeCard = ({name, image, route, onClick}) => {
     }
 
     return(
-        <div>
-            <img src={image} alt={name} />
+        <div className={s.container}>
+            <img src={image} alt={name} className={s.image}/>
             <Button name={name} click={handleClick}/>
         </div>
     )
