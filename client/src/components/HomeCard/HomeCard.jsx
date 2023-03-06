@@ -6,7 +6,7 @@ const HomeCard = ({name, image, route, onClick}) => {
 
     const handleClick = () => {
         if(route) {
-            navigate(`/${route}`)
+            navigate(route)
         } else {
             onClick()
         }
