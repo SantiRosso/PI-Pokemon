@@ -1,16 +1,20 @@
-import {useNavigate} from "react-router-dom"
 //components
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import CreatePokemonModal from "../Modals/CreatePokemonModal"
 import SearchBar from "../SearchBar/SearchBar"
+import HomeCard from "../HomeCard/HomeCard"
 //styles
 import s from "./Home.module.css"
 //images
 import pokedex from "./pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 
 const Home = () => {
-    const navigate = useNavigate()
+
+    const logout = () => {
+        console("logout")
+    }
+
     return(
         <div className={s.home}>
             <NavBar/>
@@ -20,30 +24,17 @@ const Home = () => {
             </div>
             {/* CARDS */}
             <SearchBar/>
-            <div>
-                <button onClick={()=> navigate("/pokemons")}>Pokemons</button>
-            </div>
-            <div>
-                <button onClick={()=> navigate("/profile")}>Profile</button>
-            </div>
-            <div>
-                <button onClick={()=> navigate("/foro")}>Foro</button>
-            </div>
-            <div>
-                <button onClick={()=> navigate("/about")}>About</button>
-            </div>
-            <div>
-                {/* <button onClick={()=> navigate("/create-pokemon")}>Create Pokemon</button> */}
-            </div>
+            <HomeCard name="Pokemons" image="#" route="pokemons" />
+            <HomeCard name="Profile" image="#" route="profile" />
+            <HomeCard name="Foro" image="#" route="foro" />
+            <HomeCard name="About" image="#" route="about" />
+            <HomeCard name="Login/Register" image="#" route="" />
+            <HomeCard name="Logout" image="#" route="" onClick={logout}/>
+            {/* <HomeCard name="Create Pokemon" image="#" route="create-pokemon" /> */}
             <div>
                 <CreatePokemonModal/>
             </div>
-            <div>
-                <button onClick={()=> navigate("/")}>Login/Register</button>
-            </div>
-            <div>
-                <button>Logout</button>
-            </div>
+            
             <Footer/>
         </div>
     )
