@@ -1,3 +1,16 @@
 .button{
-    background-color: red;
+    margin-left: 10px;
+    height: 5vh;
+    width: 5vw;
+    background-image: linear-gradient(to right top, #f5f5f5, #e2e2e2, #d0cfd0, #bebdbd, #acabab);
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: large;
+    transition: .5s;
+}
+
+.button:hover{
+    background-image: linear-gradient(to right top, #000000, #41101d, #800929, #c10029, #ff0017);
+    color: #f5f5f5;
+    border: 2px solid black;
 }

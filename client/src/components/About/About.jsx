@@ -18,7 +18,7 @@ const About = () => {
     return(
         <div>
             <NavBar/>
-            <Button name="Back" onClick={handleClickBack}/>
+            <Button name="Back" click={handleClickBack}/>
             <div className={s.title}>
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
