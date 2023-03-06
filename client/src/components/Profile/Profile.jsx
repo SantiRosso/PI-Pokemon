@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 //styles
 import s from "./Profile.module.css"
 //images
-import pokedex from "../Home/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+import pokedex from "../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 
 const Profile = () => {
     const navigate = useNavigate() 

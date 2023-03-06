@@ -8,8 +8,13 @@
 }
 
 body {
-    background-image: url("./X0W5i4w-pokeball-wallpaper.jpg");
+    background-image: url("./images/X0W5i4w-pokeball-wallpaper.jpg");
     /* background-image: url("./xLZrFev-pokeball-image.png"); */
+}
+
+.carrousel{
+    display: flex;
+    margin: 10vh;
 }
 
 .createCard{
@@ -23,6 +28,11 @@ body {
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
+}
+
+.createCard:hover{
+    border: 2px solid white;
+    overflow: visible;
 }
 
 .createImage{

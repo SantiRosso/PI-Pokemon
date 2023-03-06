@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 //styles
 import s from "./LoginRegister.module.css"
 //images
-import pokedex from "../Home/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+import pokedex from "../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 
 const LoginRegister = () => {
     return(

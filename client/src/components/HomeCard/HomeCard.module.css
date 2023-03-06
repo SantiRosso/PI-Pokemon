@@ -11,9 +11,15 @@
     overflow: hidden;
 }
 
+.container:hover{
+    border: 2px solid white;
+    overflow: visible;
+}
+
 .image{
     height: 30vh;
     width: 13vw;
     object-fit: cover;
     border: 2px solid rgb(13, 13, 13);
 }
+

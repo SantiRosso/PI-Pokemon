@@ -11,7 +11,7 @@ import Footer from "../Footer/Footer";
 import SearchBar from "../SearchBar/SearchBar"
 import Button from "../Button/Button";
 //images
-import pokedex from "../Home/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+import pokedex from "../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 
 const Pokemons = () => {
     const dispatch = useDispatch()
