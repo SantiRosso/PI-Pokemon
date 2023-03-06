@@ -38,8 +38,8 @@ const Home = () => {
             <HomeCard name="Login/Register" image={pokedex2} route="/" />
             <HomeCard name="Logout" image={logout1} route="" onClick={logout}/>
             {/* <HomeCard name="Create Pokemon" image="#" route="create-pokemon" /> */}
-            <div>
-                <img src={pokeball} alt="Create Pokemon" />
+            <div className={s.createCard}>
+                <img src={pokeball} alt="Create Pokemon" className={s.createImage}/>
                 <CreatePokemonModal/>
             </div>
             <Footer/>
