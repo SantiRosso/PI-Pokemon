@@ -1,4 +1,6 @@
 import {useNavigate} from "react-router-dom"
+//components
+import Button from "../Button/Button"
 
 const HomeCard = ({name, image, route, onClick}) => {
 
@@ -15,7 +17,7 @@ const HomeCard = ({name, image, route, onClick}) => {
     return(
         <div>
             <img src={image} alt={name} />
-            <button onClick={handleClick}>{name}</button>
+            <Button name={name} click={handleClick}/>
         </div>
     )
 }
