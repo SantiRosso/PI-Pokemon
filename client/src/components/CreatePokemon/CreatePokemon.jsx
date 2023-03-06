@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 //components
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
+import Button from "../Button/Button";
 
 const CreatePokemon = () => {
     const navigate = useNavigate() 
@@ -13,7 +14,7 @@ const CreatePokemon = () => {
     return(
         <div>
             <NavBar/>
-            <button onClick={handleClickBack}>Back</button>
+            <Button name="Back" click={handleClickBack}/>
             <h1>Create Pokemon</h1>
             <Footer/>
         </div>

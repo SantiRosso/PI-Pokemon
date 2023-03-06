@@ -9,6 +9,7 @@ import NavBar from "../NavBar/NavBar";
 import Card from "../Card/Card"
 import Footer from "../Footer/Footer";
 import SearchBar from "../SearchBar/SearchBar"
+import Button from "../Button/Button";
 //images
 import pokedex from "../Home/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 
@@ -29,7 +30,7 @@ const Pokemons = () => {
     return(
         <div>
             <NavBar/>
-            <button onClick={handleClickBack}>Back</button>
+            <Button name="Back" click={handleClickBack}/>
             <div className={s.title}>
                 <img src={pokedex} alt="Pokedex" /> 
             </div>

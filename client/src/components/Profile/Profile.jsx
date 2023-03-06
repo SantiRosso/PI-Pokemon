@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 //components
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
+import Button from "../Button/Button";
 //styles
 import s from "./Profile.module.css"
 //images
@@ -17,7 +18,7 @@ const Profile = () => {
     return(
         <div>
             <NavBar/>
-            <button onClick={handleClickBack}>Back</button>
+            <Button name="Back" click={handleClickBack}/>
             <div className={s.title}>
                 <img src={pokedex} alt="Pokedex" /> 
             </div>

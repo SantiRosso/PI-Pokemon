@@ -4,6 +4,7 @@ import axios from "axios";
 //components
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
+import Button from "../Button/Button";
 
 const PokemonDetail = () => {
     const id = useParams()
@@ -23,7 +24,7 @@ const PokemonDetail = () => {
     return(
         <div>
             <NavBar/>
-            <button onClick={handleClickBack}>Back</button>
+            <Button name="Back" click={handleClickBack}/>
             <h1>{detail?.name}</h1>
             <h1>TYPES: {detail?.types}</h1>
             <img src={detail?.image.front_default} alt={detail?.name} />
