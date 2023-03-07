@@ -26,7 +26,16 @@ const Home = () => {
         console("logout")
     }
 
-    
+    const functionalities = [
+        {name:"Login/Register", image:pokedex2, route:"/"},
+        {name:"Profile", image:pikachu, route:"/profile"},
+        {name:"Pokemons", image:pokemons, route:"/pokemons"}, 
+        {name:"Foro", image:foro, route:"/foro"},
+        {name:"Create Pokemon", image:pokeball, onClick:{OpenModal1}},
+        {name:"About", image:charmander, route:"/about"},
+        {name:"Logout", image:logout1, onClick:{logout}},
+        // {name:"Create Pokemon", image:pokeball, route:"create-pokemon"},
+    ]
 
     return(
         <div className={s.home}>
@@ -38,14 +47,13 @@ const Home = () => {
             {/* CARDS */}
             <SearchBar/>
             <div className={s.carrousel}>
-                <HomeCard name="Login/Register" image={pokedex2} route="/" />
-                <HomeCard name="Profile" image={pikachu} route="/profile" />
-                <HomeCard name="Pokemons" image={pokemons} route="/pokemons" />
-                <HomeCard name="Foro" image={foro} route="/foro" />
-                <HomeCard name="Create Pokemon" image={pokeball} onClick={OpenModal1}/>
-                <HomeCard name="About" image={charmander} route="/about" />
-                <HomeCard name="Logout" image={logout1} route="" onClick={logout}/>
-                {/* <HomeCard name="Create Pokemon" image={pokeball} route="create-pokemon" /> */}
+                {
+                    functionalities.map((e) => {
+                        return(
+                            <HomeCard name={e.name} image={e.image} route={e.route} onClick={e.onClick}/>
+                        )
+                    })
+                }
             </div>
             <CreatePokemonModal isOpen={isOpenModal1} closeModal={closeModal1}/>
             <Footer/>
