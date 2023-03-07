@@ -62,7 +62,7 @@ const Home = () => {
             {/* CARDS */}
             <SearchBar/>
             <div className={s.carrousel}>
-                <Button name={"<"} click={previousPage} disabled={page === 1}/>
+                <Button name={"<"} click={previousPage} disabled={page === 1} /* hidden={page === 1} *//>
                 {
                     functionalities.slice((page -1) * perPage, (page -1) * perPage + perPage).map((e) => {
                         return(
@@ -70,7 +70,7 @@ const Home = () => {
                         )
                     })
                 }
-                <Button name={">"} click={nextPage} disabled={page === max}/>
+                <Button name={">"} click={nextPage} disabled={page === max} /* hidden={page === max} *//>
             </div>
             <CreatePokemonModal isOpen={isOpenModal1} closeModal={closeModal1}/>
             <Footer/>
