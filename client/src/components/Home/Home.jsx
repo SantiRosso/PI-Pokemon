@@ -1,3 +1,5 @@
+import { useModal } from "../../Hooks/useModal";
+import { useState } from "react";
 //components
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
@@ -15,8 +17,8 @@ import charmander from "./images/charmander.jpg"
 import pokemons from "./images/pokemons.jpg"
 import foro from "./images/foro.png"
 import logout1 from "./images/logout.png"
+import Button from "../Button/Button";
 
-import { useModal } from "../../Hooks/useModal";
 
 const Home = () => {
 
@@ -37,6 +39,19 @@ const Home = () => {
         // {name:"Create Pokemon", image:pokeball, route:"create-pokemon"},
     ]
 
+    //PAGINATION 
+    const [page, setPage] = useState(1);
+    const [perPage] = useState(4);
+    let max = Math.ceil(functionalities.length / perPage)
+
+    const nextPage = () => {
+        setPage (page +1)
+    }
+
+    const previousPage = () => {
+        setPage (page -1)
+    }
+
     return(
         <div className={s.home}>
             <NavBar/>
@@ -47,13 +62,15 @@ const Home = () => {
             {/* CARDS */}
             <SearchBar/>
             <div className={s.carrousel}>
+                <Button name={"<"} click={previousPage} disabled={page === 1}/>
                 {
-                    functionalities.map((e) => {
+                    functionalities.slice((page -1) * perPage, (page -1) * perPage + perPage).map((e) => {
                         return(
                             <HomeCard name={e.name} image={e.image} route={e.route} onClick={e.onClick}/>
                         )
                     })
                 }
+                <Button name={">"} click={nextPage} disabled={page === max}/>
             </div>
             <CreatePokemonModal isOpen={isOpenModal1} closeModal={closeModal1}/>
             <Footer/>
