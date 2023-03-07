@@ -16,28 +16,3 @@ body {
     display: flex;
     margin: 10vh;
 }
-
-.createCard{
-    background-image: linear-gradient(to right top, #000000, #41101d, #800929, #c10029, #ff0017);
-    height: 50vh;   
-    width: 15vw;
-    border: 2px solid rgb(13, 13, 13);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    overflow: hidden;
-}
-
-.createCard:hover{
-    border: 2px solid white;
-    overflow: visible;
-}
-
-.createImage{
-    height: 30vh;
-    width: 13vw;
-    object-fit: cover;
-    border: 2px solid rgb(13, 13, 13);
-}

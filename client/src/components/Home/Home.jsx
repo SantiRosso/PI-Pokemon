@@ -16,11 +16,17 @@ import pokemons from "./images/pokemons.jpg"
 import foro from "./images/foro.png"
 import logout1 from "./images/logout.png"
 
+import { useModal } from "../../Hooks/useModal";
+
 const Home = () => {
+
+    const [isOpenModal1, OpenModal1, closeModal1] = useModal(false)
 
     const logout = () => {
         console("logout")
     }
+
+    
 
     return(
         <div className={s.home}>
@@ -32,19 +38,16 @@ const Home = () => {
             {/* CARDS */}
             <SearchBar/>
             <div className={s.carrousel}>
-                <HomeCard name="Pokemons" image={pokemons} route="/pokemons" />
-                <HomeCard name="Profile" image={pikachu} route="/profile" />
-                <HomeCard name="Foro" image={foro} route="/foro" />
-                <HomeCard name="About" image={charmander} route="/about" />
                 <HomeCard name="Login/Register" image={pokedex2} route="/" />
+                <HomeCard name="Profile" image={pikachu} route="/profile" />
+                <HomeCard name="Pokemons" image={pokemons} route="/pokemons" />
+                <HomeCard name="Foro" image={foro} route="/foro" />
+                <HomeCard name="Create Pokemon" image={pokeball} onClick={OpenModal1}/>
+                <HomeCard name="About" image={charmander} route="/about" />
                 <HomeCard name="Logout" image={logout1} route="" onClick={logout}/>
-                {/* <HomeCard name="Create Pokemon" image="#" route="create-pokemon" /> */}
-                <div className={s.createCard}>
-                    <img src={pokeball} alt="Create Pokemon" className={s.createImage}/>
-                    <CreatePokemonModal/>
-                </div>
+                {/* <HomeCard name="Create Pokemon" image={pokeball} route="create-pokemon" /> */}
             </div>
-            
+            <CreatePokemonModal isOpen={isOpenModal1} closeModal={closeModal1}/>
             <Footer/>
         </div>
     )
