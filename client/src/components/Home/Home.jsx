@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import CreatePokemonModal from "../Modals/CreatePokemonModal"
 import SearchBar from "../SearchBar/SearchBar"
 import HomeCard from "../HomeCard/HomeCard"
+import Button from "../Button/Button";
 //styles
 import s from "./Home.module.css"
 //images
@@ -17,7 +18,7 @@ import charmander from "./images/charmander.jpg"
 import pokemons from "./images/pokemons.jpg"
 import foro from "./images/foro.png"
 import logout1 from "./images/logout.png"
-import Button from "../Button/Button";
+import soon from "./images/soon.jpeg";
 
 
 const Home = () => {
@@ -35,14 +36,17 @@ const Home = () => {
         {name:"Foro", image:foro, route:"/foro"},
         {name:"Create Pokemon", image:pokeball, onClick:{OpenModal1}},
         {name:"About", image:charmander, route:"/about"},
-        {name:"Logout", image:logout1, onClick:{logout}},
+        {name:"Favourites", image:soon, onClick:{logout}},
+        {name:"Donations", image:soon, onClick:{logout}},
+        {name:"Settings", image:soon, onClick:{logout}},
+        {name:"Social", image:soon, onClick:{logout}},
         // {name:"Create Pokemon", image:pokeball, route:"create-pokemon"},
     ]
 
     //PAGINATION 
     const [page, setPage] = useState(1);
     const [perPage] = useState(4);
-    let max = Math.ceil(functionalities.length / perPage)
+    let max = Math.ceil(functionalities.length - perPage + 1 / perPage)
 
     const nextPage = () => {
         setPage (page +1)
@@ -64,7 +68,7 @@ const Home = () => {
             <div className={s.carrousel}>
                 <Button name={"<"} click={previousPage} disabled={page === 1} /* hidden={page === 1} *//>
                 {
-                    functionalities.slice((page -1) * perPage, (page -1) * perPage + perPage).map((e) => {
+                    functionalities.slice(page - 1, (page - 1) + perPage).map((e) => {
                         return(
                             <HomeCard name={e.name} image={e.image} route={e.route} onClick={e.onClick}/>
                         )
