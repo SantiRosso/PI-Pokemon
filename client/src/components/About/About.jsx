@@ -7,6 +7,9 @@ import Button from "../Button/Button"
 import s from "./About.module.css"
 //images
 import pokedex from "../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+import soon from "../Home/images/soon.jpeg" 
+//react icons
+import {RiArrowGoBackFill} from "react-icons/ri"
 
 const About = () => {
     const navigate = useNavigate() 
@@ -18,11 +21,12 @@ const About = () => {
     return(
         <div>
             <NavBar/>
-            <Button name="Back" click={handleClickBack}/>
+            <Button name="Back" icon={<RiArrowGoBackFill/>} click={handleClickBack}/>
             <div className={s.title}>
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
             <h1>About</h1>
+            <img src={soon} alt="Pokedex" />
             <Footer/>
         </div>
     )

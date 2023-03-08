@@ -5,6 +5,8 @@ import axios from "axios";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import Button from "../Button/Button";
+//react icons
+import {RiArrowGoBackFill} from "react-icons/ri"
 
 const PokemonDetail = () => {
     const id = useParams()
@@ -24,7 +26,7 @@ const PokemonDetail = () => {
     return(
         <div>
             <NavBar/>
-            <Button name="Back" click={handleClickBack}/>
+            <Button name="Back" icon={<RiArrowGoBackFill/>} click={handleClickBack}/>
             <h1>{detail?.name}</h1>
             <h1>TYPES: {detail?.types}</h1>
             <img src={detail?.image.front_default} alt={detail?.name} />

@@ -19,6 +19,8 @@ import pokemons from "./images/pokemons.jpg"
 import foro from "./images/foro.png"
 import logout1 from "./images/logout.png"
 import soon from "./images/soon.jpeg";
+//react-Icons
+import {TfiAngleLeft, TfiAngleRight} from "react-icons/tfi"
 
 
 const Home = () => {
@@ -34,12 +36,13 @@ const Home = () => {
         {name:"Profile", image:pikachu, route:"/profile"},
         {name:"Pokemons", image:pokemons, route:"/pokemons"}, 
         {name:"Foro", image:foro, route:"/foro"},
-        {name:"Create Pokemon", image:pokeball, onClick:{OpenModal1}},
+        {name:"Create Pokemon", image:pokeball, onClick:OpenModal1},
         {name:"About", image:charmander, route:"/about"},
-        {name:"Favourites", image:soon, onClick:{logout}},
-        {name:"Donations", image:soon, onClick:{logout}},
-        {name:"Settings", image:soon, onClick:{logout}},
-        {name:"Social", image:soon, onClick:{logout}},
+        {name:"Favourites", image:soon, onClick:logout},
+        {name:"Donations", image:soon, onClick:logout},
+        {name:"Settings", image:soon, onClick:logout},
+        {name:"Social", image:soon, onClick:logout},
+        {name:"Statistics", image:soon, onClick:logout},
         // {name:"Create Pokemon", image:pokeball, route:"create-pokemon"},
     ]
 
@@ -66,7 +69,7 @@ const Home = () => {
             {/* CARDS */}
             <SearchBar/>
             <div className={s.carrousel}>
-                <Button name={"<"} click={previousPage} disabled={page === 1} /* hidden={page === 1} *//>
+                <Button icon={<TfiAngleLeft/>} click={previousPage} disabled={page === 1} /* hidden={page === 1} *//>
                 {
                     functionalities.slice(page - 1, (page - 1) + perPage).map((e) => {
                         return(
@@ -74,7 +77,7 @@ const Home = () => {
                         )
                     })
                 }
-                <Button name={">"} click={nextPage} disabled={page === max} /* hidden={page === max} *//>
+                <Button icon={<TfiAngleRight/>} click={nextPage} disabled={page === max} /* hidden={page === max} *//>
             </div>
             <CreatePokemonModal isOpen={isOpenModal1} closeModal={closeModal1}/>
             <Footer/>

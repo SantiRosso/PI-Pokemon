@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import s from "./LoginRegister.module.css"
 //images
 import pokedex from "../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+import soon from "../Home/images/soon.jpeg" 
 
 const LoginRegister = () => {
     return(
@@ -13,6 +14,7 @@ const LoginRegister = () => {
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
             <h1>LoginRegister</h1>
+            <img src={soon} alt="Pokedex" />
             <Link to="/home">
                 <h1>Home</h1>
             </Link>

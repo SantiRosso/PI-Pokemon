@@ -1,4 +1,7 @@
 .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 10px;
     height: 5vh;
     min-width: 5vw;

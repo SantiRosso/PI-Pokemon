@@ -12,6 +12,8 @@ import SearchBar from "../SearchBar/SearchBar"
 import Button from "../Button/Button";
 //images
 import pokedex from "../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+//react icons
+import {RiArrowGoBackFill} from "react-icons/ri"
 
 const Pokemons = () => {
     const dispatch = useDispatch()
@@ -30,7 +32,7 @@ const Pokemons = () => {
     return(
         <div>
             <NavBar/>
-            <Button name="Back" click={handleClickBack}/>
+            <Button name="Back" icon={<RiArrowGoBackFill/>} click={handleClickBack}/>
             <div className={s.title}>
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
