@@ -10,6 +10,7 @@ import Card from "../Card/Card"
 import Footer from "../Footer/Footer";
 import SearchBar from "../SearchBar/SearchBar"
 import Button from "../Button/Button";
+import Loader from "../Loader/Loader"
 //images
 import pokedex from "../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 //react icons
@@ -47,11 +48,12 @@ const Pokemons = () => {
             <SearchBar/>
             <div className={s.pokemonsContainer}>
                 {
-                    pokemons?.length && pokemons.map((e, i) => {
+                    pokemons?.length ? pokemons.map((e, i) => {
                         return(
                             <Card key={i} id={e.id} name={e.name} types={e.types} image={e.image?.front_default || "https://w7.pngwing.com/pngs/620/521/png-transparent-poke-ball-pokemon-pokemon-rim-mobile-phones-pokemon.png"}/>
                         )
                     })
+                    : <Loader/>
                 }  
             </div>
                 <Footer/> 
