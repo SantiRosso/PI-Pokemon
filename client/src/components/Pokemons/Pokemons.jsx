@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllPokemons } from "../../redux/actions";
+import { getAllPokemons, resetFilters } from "../../redux/actions";
 import { useNavigate } from "react-router-dom";
 //styles
 import s from "./Pokemons.module.css"
@@ -17,7 +17,7 @@ import {RiArrowGoBackFill} from "react-icons/ri"
 
 const Pokemons = () => {
     const dispatch = useDispatch()
-    const pokemons = useSelector((state) => state.pokemons)
+    const pokemons = useSelector((state) => state.filtered)
     const navigate = useNavigate()
 
     useEffect(()=>{
@@ -29,10 +29,18 @@ const Pokemons = () => {
         navigate("/home");
     }
 
+    const handleClickReset = () => {
+        dispatch(resetFilters())
+    }
+
     return(
         <div>
             <NavBar/>
-            <Button name="Back" icon={<RiArrowGoBackFill/>} click={handleClickBack}/>
+            <div className={s.buttonsDiv}>
+                <Button name="Back" icon={<RiArrowGoBackFill/>} click={handleClickBack}/>
+                <Button name="Reset Filters" click={handleClickReset}/>
+            </div>
+            
             <div className={s.title}>
                 <img src={pokedex} alt="Pokedex" /> 
             </div>

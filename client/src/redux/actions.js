@@ -3,6 +3,7 @@ import { showMessage } from "../ShowMessage";
 
 export const GET_ALL_POKEMONS = "GET_ALL_POKEMONS";
 export const GET_POKEMON_BY_NAME = "GET_POKEMON_BY_NAME";
+export const RESET_FILTERS = "RESET_FILTERS";
 
 export const getAllPokemons = () => {
   return async (dispatch) => {
@@ -21,5 +22,11 @@ export const getPokemonByName = (name) => {
     } catch (error) {
       showMessage("Pokemon not found.", "error");
     }
+  };
+};
+
+export const resetFilters = (dispatch) => {
+  return (dispatch) => {
+    return dispatch({ type: RESET_FILTERS });
   };
 };

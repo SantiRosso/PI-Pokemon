@@ -22,3 +22,8 @@
     display: flex;
     justify-content: center;
 }
+
+.buttonsDiv{
+    display: flex;
+    justify-content: space-between;
+}
