@@ -15,9 +15,7 @@ export const getAllPokemons = () => {
 export const getPokemonByName = (name) => {
   return async (dispatch) => {
     try {
-      let result = await axios.get(
-        `http://localhost:3001/pokemons?name=${name}`
-      );
+      let result = await axios.get(`/pokemons?name=${name}`);
       return dispatch({ type: GET_POKEMON_BY_NAME, payload: result.data });
     } catch (error) {
       showMessage("Pokemon not found.", "error");
