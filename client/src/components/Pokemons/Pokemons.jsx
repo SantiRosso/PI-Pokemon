@@ -20,7 +20,6 @@ const Pokemons = () => {
     const dispatch = useDispatch()
     const pokemons = useSelector((state) => state.filtered)
     const navigate = useNavigate()
-    const [status, setStatus] = useState(false)
 
     useEffect(()=>{
         if(!pokemons.length)
@@ -38,7 +37,6 @@ const Pokemons = () => {
     return(
         <div>
             <NavBar/>
-            <button onClick={()=> setStatus(!status)}>Click</button>
             <div className={s.buttonsDiv}>
                 <Button name="Back" icon={<RiArrowGoBackFill/>} click={handleClickBack}/>
                 <Button name="Reset Filters" click={handleClickReset}/>
