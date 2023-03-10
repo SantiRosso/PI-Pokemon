@@ -20,6 +20,7 @@ const Pokemons = () => {
     const dispatch = useDispatch()
     const pokemons = useSelector((state) => state.filtered)
     const navigate = useNavigate()
+    const [status, setStatus] = useState(false)
 
     useEffect(()=>{
         if(!pokemons.length)
@@ -37,6 +38,7 @@ const Pokemons = () => {
     return(
         <div>
             <NavBar/>
+            <button onClick={()=> setStatus(!status)}>Click</button>
             <div className={s.buttonsDiv}>
                 <Button name="Back" icon={<RiArrowGoBackFill/>} click={handleClickBack}/>
                 <Button name="Reset Filters" click={handleClickReset}/>
@@ -48,7 +50,7 @@ const Pokemons = () => {
             <SearchBar/>
             <div className={s.pokemonsContainer}>
                 {
-                    pokemons.length ? pokemons?.map((e, i) => {
+                    status ? pokemons?.map((e, i) => {
                         return(
                             <Card key={i} id={e.id} name={e.name} types={e.types} image={e.image?.front_default || "https://w7.pngwing.com/pngs/620/521/png-transparent-poke-ball-pokemon-pokemon-rim-mobile-phones-pokemon.png"}/>
                         )
