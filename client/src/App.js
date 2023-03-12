@@ -8,15 +8,16 @@ import Pokemons from "./components/Pokemons/Pokemons";
 import Profile from "./components/Profile/Profile";
 import Foro from "./components/Foro/Foro";
 import About from "./components/About/About";
-import LoginRegister from "./components/LoginRegister/LoginRegister";
 import CreatePokemon from "./components/CreatePokemon/CreatePokemon";
 import PokemonDetail from "./components/PokemonDetail/PokemonDetail";
+import LandingPage from "./components/LandingPage/LandingPage";
+// import LoginRegister from "./components/LoginRegister/LoginRegister";
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route exact path="/" element={<LoginRegister />} />
+        <Route exact path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/pokemons" element={<Pokemons />} />
         <Route path="/pokemon-detail/:id" element={<PokemonDetail />} />
