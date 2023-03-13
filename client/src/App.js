@@ -4,15 +4,15 @@ import { Routes, Route } from "react-router-dom";
 
 //components
 import Home from "./components/Home/Home";
-import Pokemons from "./components/Pokemons/Pokemons";
-import Profile from "./components/Profile/Profile";
-import Foro from "./components/Foro/Foro";
-import About from "./components/About/About";
-import CreatePokemon from "./components/CreatePokemon/CreatePokemon";
-import PokemonDetail from "./components/PokemonDetail/PokemonDetail";
-import LandingPage from "./components/LandingPage/LandingPage";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
+import Pokemons from "./components/Pages/Pokemons/Pokemons";
+import Profile from "./components/Pages/Profile/Profile";
+import Foro from "./components/Pages/Foro/Foro";
+import About from "./components/Pages/About/About";
+import CreatePokemon from "./components/Pages/CreatePokemon/CreatePokemon";
+import PokemonDetail from "./components/Pages/PokemonDetail/PokemonDetail";
+import LandingPage from "./components/Pages/LandingPage/LandingPage";
+import Login from "./components/Pages/Login/Login";
+import Register from "./components/Pages/Register/Register";
 
 function App() {
   return (

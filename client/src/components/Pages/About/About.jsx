@@ -1,17 +1,17 @@
-import {useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 //components
-import Footer from "../Footer/Footer";
-import NavBar from "../NavBar/NavBar"
-import Button from "../Button/Button";
+import NavBar from "../../NavBar/NavBar"
+import Footer from "../../Footer/Footer"
+import Button from "../../Button/Button"
 //styles
-import s from "./Foro.module.css"
+import s from "./About.module.css"
 //images
-import pokedex from "../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
-import soon from "../Home/images/soon.jpeg"
+import pokedex from "../../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+import soon from "../../Home/images/soon.jpeg" 
 //react icons
 import {RiArrowGoBackFill} from "react-icons/ri"
 
-const Foro = () => {
+const About = () => {
     const navigate = useNavigate() 
 
     const handleClickBack = () => {
@@ -25,10 +25,11 @@ const Foro = () => {
             <div className={s.title}>
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
-            <h1>Foro</h1>
-            <img src={soon} alt="Pokedex" /> 
+            <h1>About</h1>
+            <img src={soon} alt="Pokedex" />
             <Footer/>
         </div>
     )
 }
-export default Foro;
+
+export default About;

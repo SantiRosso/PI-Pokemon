@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 //components
-import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
-import Button from "../Button/Button";
+import NavBar from "../../NavBar/NavBar";
+import Footer from "../../Footer/Footer";
+import Button from "../../Button/Button";
 //react icons
 import {RiArrowGoBackFill} from "react-icons/ri"
 

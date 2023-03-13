@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllPokemons, resetFilters } from "../../redux/actions";
+import { getAllPokemons, resetFilters } from "../../../redux/actions";
 import { useNavigate } from "react-router-dom";
 //styles
 import s from "./Pokemons.module.css"
 //components
-import NavBar from "../NavBar/NavBar";
-import Card from "../Card/Card"
-import Footer from "../Footer/Footer";
-import SearchBar from "../SearchBar/SearchBar"
-import Button from "../Button/Button";
-import Loader from "../Loader/Loader"
+import NavBar from "../../NavBar/NavBar";
+import Card from "../../Card/Card"
+import Footer from "../../Footer/Footer";
+import SearchBar from "../../SearchBar/SearchBar"
+import Button from "../../Button/Button";
+import Loader from "../../Loader/Loader"
 //images
-import pokedex from "../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+import pokedex from "../../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 //react icons
 import {RiArrowGoBackFill} from "react-icons/ri"
 

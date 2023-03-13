@@ -1,11 +1,11 @@
 import {Link, useNavigate} from "react-router-dom"
 //components
-import Footer from "../Footer/Footer";
-import Button from "../Button/Button"
+import Footer from "../../Footer/Footer";
+import Button from "../../Button/Button"
 //styles
 import s from "./LandingPage.module.css";
 //images
-import pokedex from "../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+import pokedex from "../../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 
 const LandingPage = () => {
     const navigate = useNavigate()
