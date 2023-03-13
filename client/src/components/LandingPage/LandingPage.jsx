@@ -21,7 +21,8 @@ const LandingPage = () => {
             </div>
             <div className={s.content}>
                <Button name={"Home"} click={()=> handleClick("/home")}/>
-               <Button name={"LoginRegister"} click={() => handleClick("/LoginRegister")}/>
+               <Button name={"Login"} click={() => handleClick("/Login")}/>
+               <Button name={"Register"} click={() => handleClick("/Register")}/>
             </div>
             <Footer/>
         </div>
