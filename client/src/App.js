@@ -11,7 +11,7 @@ import About from "./components/About/About";
 import CreatePokemon from "./components/CreatePokemon/CreatePokemon";
 import PokemonDetail from "./components/PokemonDetail/PokemonDetail";
 import LandingPage from "./components/LandingPage/LandingPage";
-// import LoginRegister from "./components/LoginRegister/LoginRegister";
+import LoginRegister from "./components/LoginRegister/LoginRegister";
 
 function App() {
   return (
@@ -25,6 +25,8 @@ function App() {
         <Route path="/foro" element={<Foro />} />
         <Route path="/about" element={<About />} />
         <Route path="/create-pokemon" element={<CreatePokemon />} />
+        <Route path="/create-pokemon" element={<CreatePokemon />} />
+        <Route path="/LoginRegister" element={<LoginRegister />} />
         {/* <Route path="/editPokemon" element={<EditPokemon />} /> */}
       </Routes>
     </div>
