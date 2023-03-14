@@ -70,6 +70,17 @@ const Login= () => {
         }
       };
 
+      //Github
+      const handleGithubLogin = async () => {
+        try {
+          const credentials = await loginWithGithub();
+          window.localStorage.setItem("token", credentials._tokenResponse.idToken);
+          showMessage("Welcome " + credentials.user.displayName, "success");
+        } catch (error) {
+          showMessage(error.code, "error");
+        }
+      };
+
     return(
       <div>
         <form onSubmit={handelSubmitLogin}>
@@ -100,8 +111,10 @@ const Login= () => {
         >
           Facebook
         </button>
+        <button type="button" onClick={handleGithubLogin}>
+          Github
+        </button>
       </div>
-        
     )
 }
 
