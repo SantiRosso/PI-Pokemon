@@ -12,7 +12,7 @@ import {
   sendPasswordResetEmail,
 } from "firebase/auth";
 import { auth } from "../../firebase.js";
-import { showMessage } from "../../showMessage.js";
+import { showMessage } from "../../ShowMessage.js";
 
 export const authContext = createContext();
 

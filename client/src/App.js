@@ -14,23 +14,28 @@ import LandingPage from "./components/Pages/LandingPage/LandingPage";
 import Login from "./components/Pages/Login/Login";
 import Register from "./components/Pages/Register/Register";
 
+//firebase
+import { AuthProvider } from "./components/context/authContext.js";
+
 function App() {
   return (
     <div>
-      <Routes>
-        <Route exact path="/" element={<LandingPage />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/pokemons" element={<Pokemons />} />
-        <Route path="/pokemon-detail/:id" element={<PokemonDetail />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/foro" element={<Foro />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/create-pokemon" element={<CreatePokemon />} />
-        <Route path="/create-pokemon" element={<CreatePokemon />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Register" element={<Register />} />
-        {/* <Route path="/editPokemon" element={<EditPokemon />} /> */}
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route exact path="/" element={<LandingPage />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/pokemons" element={<Pokemons />} />
+          <Route path="/pokemon-detail/:id" element={<PokemonDetail />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/foro" element={<Foro />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/create-pokemon" element={<CreatePokemon />} />
+          <Route path="/create-pokemon" element={<CreatePokemon />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
+          {/* <Route path="/editPokemon" element={<EditPokemon />} /> */}
+        </Routes>
+      </AuthProvider>
     </div>
   );
 }
