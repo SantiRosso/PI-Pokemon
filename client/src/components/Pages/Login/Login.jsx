@@ -81,6 +81,20 @@ const Login= () => {
         }
       };
 
+      //handleResetPassword
+      const handleResetPassword = async () => {
+        if (!userLogin.email) {
+          showMessage("Please, enter your email", "error");
+        } else {
+          try {
+            await resetPassword(userLogin.email);
+            showMessage("Check your email for a password reset link", "success");
+          } catch (error) {
+            showMessage(error.code, "error");
+          }
+        }
+      };   
+
     return(
       <div>
         <form onSubmit={handelSubmitLogin}>
@@ -114,6 +128,9 @@ const Login= () => {
         <button type="button" onClick={handleGithubLogin}>
           Github
         </button>
+        <a href="#!" onClick={handleResetPassword}>
+          Forgot your password?
+        </a>
       </div>
     )
 }
