@@ -19,6 +19,7 @@ const Login= () => {
         password: "",
     });
 
+    //login with email and password
     const handleChangeLogin = (e) => {
         setUserLogin({
             ...userLogin,
@@ -47,7 +48,19 @@ const Login= () => {
         }
       };
 
+      //google
+      const handleGoogleLogin = async () => {
+        try {
+          const credentials = await loginWithGoogle();
+          window.localStorage.setItem("token", credentials._tokenResponse.idToken);
+          showMessage("Welcome " + credentials.user.displayName, "success");
+        } catch (error) {
+          showMessage(error.code, "error");
+        }
+      }
+
     return(
+      <div>
         <form onSubmit={handelSubmitLogin}>
             <label htmlFor="email">Email:</label>
               <input
@@ -67,6 +80,11 @@ const Login= () => {
               />
               <button type="submit">LogIn</button>
         </form>
+        <button type="button" id="googleLogin" onClick={handleGoogleLogin}>
+        Google
+        </button>
+      </div>
+        
     )
 }
 
