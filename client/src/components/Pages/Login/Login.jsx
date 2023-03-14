@@ -48,7 +48,7 @@ const Login= () => {
         }
       };
 
-      //google
+      //login with google
       const handleGoogleLogin = async () => {
         try {
           const credentials = await loginWithGoogle();
@@ -58,6 +58,17 @@ const Login= () => {
           showMessage(error.code, "error");
         }
       }
+
+      //login with Facebook
+      const handleFacebookLogin = async () => {
+        try {
+          const credentials = await loginWithFacebook();
+          window.localStorage.setItem("token", credentials._tokenResponse.idToken);
+          showMessage("Welcome " + credentials.user.displayName, "success");
+        } catch (error) {
+          showMessage(error.code, "error");
+        }
+      };
 
     return(
       <div>
@@ -80,8 +91,14 @@ const Login= () => {
               />
               <button type="submit">LogIn</button>
         </form>
-        <button type="button" id="googleLogin" onClick={handleGoogleLogin}>
+        <button type="button" onClick={handleGoogleLogin}>
         Google
+        </button>
+        <button
+          type="button"
+          onClick={handleFacebookLogin}
+        >
+          Facebook
         </button>
       </div>
         
