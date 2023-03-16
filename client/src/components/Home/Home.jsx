@@ -1,5 +1,7 @@
 import { useModal } from "../../Hooks/useModal";
 import { useState } from "react";
+import { useAuth } from "../context/authContext.js";
+
 //components
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
@@ -24,11 +26,15 @@ import {TfiAngleLeft, TfiAngleRight} from "react-icons/tfi"
 
 
 const Home = () => {
+    const {
+        logout
+    } = useAuth();
 
     const [isOpenModal1, OpenModal1, closeModal1] = useModal(false)
 
-    const logout = () => {
-        console("logout")
+    const handleLogout = async () => {
+        await logout();
+        window.localStorage.removeItem("token");
     }
 
     const functionalities = [
@@ -38,11 +44,12 @@ const Home = () => {
         {name:"Foro", image:foro, route:"/foro"},
         {name:"Create Pokemon", image:pokeball, onClick:OpenModal1},
         {name:"About", image:charmander, route:"/about"},
-        {name:"Favourites", image:soon, onClick:logout},
-        {name:"Donations", image:soon, onClick:logout},
-        {name:"Settings", image:soon, onClick:logout},
-        {name:"Social", image:soon, onClick:logout},
-        {name:"Statistics", image:soon, onClick:logout},
+        {name:"Logout", image:logout1, onClick:handleLogout},
+        {name:"Favourites", image:soon},
+        {name:"Donations", image:soon },
+        {name:"Settings", image:soon },
+        {name:"Social", image:soon },
+        {name:"Statistics", image:soon },
         // {name:"Create Pokemon", image:pokeball, route:"create-pokemon"},
     ]
 
