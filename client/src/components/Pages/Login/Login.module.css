@@ -3,8 +3,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
     height: 80vh;
+    background-color: rgba(0, 0, 0, 0.283);
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 10%;
+    border: 2px solid white;
 }
 
 .form{
@@ -26,4 +30,9 @@
     flex-direction: column;
     align-items: center;
     margin: 5%;
+}
+
+.title{
+    font-size: larger;
+    font-weight: 700;
 }

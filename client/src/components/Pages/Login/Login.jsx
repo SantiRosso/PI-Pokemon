@@ -105,10 +105,12 @@ const Login= () => {
 
     return(
       <div className={s.container}>
-        <h1>Login</h1>
+        <div className={s.title}>
+                <img src={pokedex} alt="Pokedex" /> 
+            </div>
         <form className={s.form} onSubmit={handelSubmitLogin}>
           <div className={s.email}>
-            <label htmlFor="email">Email:</label>
+            <label className={s.title} htmlFor="email">Email:</label>
               <Input
                 type="email"
                 name="email"
@@ -118,7 +120,7 @@ const Login= () => {
               />
           </div>
           <div className={s.password}>
-            <label htmlFor="password">Password:</label>
+            <label className={s.title} htmlFor="password">Password:</label>
               <Input
                 type="password"
                 name="password"
