@@ -31,8 +31,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/create-pokemon" element={<CreatePokemon />} />
           <Route path="/create-pokemon" element={<CreatePokemon />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           {/* <Route path="/editPokemon" element={<EditPokemon />} /> */}
         </Routes>
       </AuthProvider>

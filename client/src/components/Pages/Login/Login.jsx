@@ -103,8 +103,15 @@ const Login= () => {
         }
       };   
 
+      //create account
+      const handleregister = () => {
+        navigate("/register")
+      }
+
     return(
-      <div className={s.container}>
+      <div>
+        <Button name="Home" route="/home" />
+        <div className={s.container}>
         <div className={s.title}>
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
@@ -140,6 +147,12 @@ const Login= () => {
         <a href="#!" onClick={handleResetPassword}>
           Forgot your password?
         </a>
+        <a href="#!" onClick={handleregister}>
+          Create account 
+        </a>
+      </div>
+        
+      
       </div>
     )
 }

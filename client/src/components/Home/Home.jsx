@@ -38,7 +38,7 @@ const Home = () => {
     }
 
     const functionalities = [
-        {name:"Login", image:pokedex2, route:"/"},
+        {name:"Login", image:pokedex2, route:"/login"},
         {name:"Profile", image:pikachu, route:"/profile"},
         {name:"Pokemons", image:pokemons, route:"/pokemons"}, 
         {name:"Foro", image:foro, route:"/foro"},
