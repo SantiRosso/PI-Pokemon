@@ -10,6 +10,7 @@ import Button2 from "../../Button2/Button2"
 import Input from "../../Input/Input"
 //images
 import pokedex from "../../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+import Footer from "../../Footer/Footer.jsx";
 
 const Login= () => {
 
@@ -112,12 +113,12 @@ const Login= () => {
       <div>
         <Button name="Home" route="/home" />
         <div className={s.container}>
-        <div className={s.title}>
-                <img src={pokedex} alt="Pokedex" /> 
-            </div>
-        <form className={s.form} onSubmit={handelSubmitLogin}>
-          <div className={s.email}>
-            <label className={s.title} htmlFor="email">Email:</label>
+          <div className={s.title}>
+            <img src={pokedex} alt="Pokedex" /> 
+          </div>
+          <form className={s.form} onSubmit={handelSubmitLogin}>
+            <div className={s.email}>
+              <label className={s.title} htmlFor="email">Email:</label>
               <Input
                 type="email"
                 name="email"
@@ -125,7 +126,7 @@ const Login= () => {
                 onChange={handleChangeLogin}
                 requided
               />
-          </div>
+            </div>
           <div className={s.password}>
             <label className={s.title} htmlFor="password">Password:</label>
               <Input
@@ -144,15 +145,14 @@ const Login= () => {
           type="button"
           click={handleFacebookLogin}/>
         <Button2 name="Login with Github" type="button" click={handleGithubLogin}/>
-        <a href="#!" onClick={handleResetPassword}>
+        <a className={s.a} href="#!" onClick={handleResetPassword}>
           Forgot your password?
         </a>
-        <a href="#!" onClick={handleregister}>
+        <a className={s.a} href="#!" onClick={handleregister}>
           Create account 
         </a>
-      </div>
-        
-      
+        </div>
+        <Footer/>
       </div>
     )
 }
