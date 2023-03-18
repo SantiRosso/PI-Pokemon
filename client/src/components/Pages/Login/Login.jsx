@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { showMessage } from "../../../ShowMessage.js"
 //styles
 import s from "./Login.module.css"
+//components
+import Button from "../../Button/Button"
 
 const Login= () => {
 
@@ -99,7 +101,7 @@ const Login= () => {
 
     return(
       <div className={s.container}>
-        <form onSubmit={handelSubmitLogin}>
+        <form className={s.form} onSubmit={handelSubmitLogin}>
           <div className={s.email}>
             <label htmlFor="email">Email:</label>
               <input
@@ -120,20 +122,14 @@ const Login= () => {
                 requided
               />
           </div>
-          <button type="submit">LogIn</button>
+          <Button name="LogIn" type="submit"/>
         </form>
-        <button type="button" onClick={handleGoogleLogin}>
-        Login with Google
-        </button>
-        <button
+        <Button name="Login with Google" type="button" click={handleGoogleLogin}/>
+        <Button
+          name="Login with Facebook"
           type="button"
-          onClick={handleFacebookLogin}
-        >
-        Login with Facebook
-        </button>
-        <button type="button" onClick={handleGithubLogin}>
-        Login with Github
-        </button>
+          click={handleFacebookLogin}/>
+        <Button name="Login with Github" type="button" click={handleGithubLogin}/>
         <a href="#!" onClick={handleResetPassword}>
           Forgot your password?
         </a>
