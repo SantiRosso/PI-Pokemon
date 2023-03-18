@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useAuth } from "../../context/authContext.js";
 import { useNavigate } from "react-router-dom";
 import { showMessage } from "../../../ShowMessage.js"
+//styles
+import s from "./Login.module.css"
 
 const Login= () => {
 
@@ -96,8 +98,9 @@ const Login= () => {
       };   
 
     return(
-      <div>
+      <div className={s.container}>
         <form onSubmit={handelSubmitLogin}>
+          <div className={s.email}>
             <label htmlFor="email">Email:</label>
               <input
                 type="email"
@@ -106,7 +109,9 @@ const Login= () => {
                 onChange={handleChangeLogin}
                 requided
               />
-              <label htmlFor="password">Password:</label>
+          </div>
+          <div className={s.password}>
+            <label htmlFor="password">Password:</label>
               <input
                 type="password"
                 name="password"
@@ -114,19 +119,20 @@ const Login= () => {
                 onChange={handleChangeLogin}
                 requided
               />
-              <button type="submit">LogIn</button>
+          </div>
+          <button type="submit">LogIn</button>
         </form>
         <button type="button" onClick={handleGoogleLogin}>
-        Google
+        Login with Google
         </button>
         <button
           type="button"
           onClick={handleFacebookLogin}
         >
-          Facebook
+        Login with Facebook
         </button>
         <button type="button" onClick={handleGithubLogin}>
-          Github
+        Login with Github
         </button>
         <a href="#!" onClick={handleResetPassword}>
           Forgot your password?
