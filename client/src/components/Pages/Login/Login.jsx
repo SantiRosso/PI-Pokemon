@@ -6,6 +6,7 @@ import { showMessage } from "../../../ShowMessage.js"
 import s from "./Login.module.css"
 //components
 import Button from "../../Button/Button"
+import Button2 from "../../Button2/Button2"
 
 const Login= () => {
 
@@ -124,12 +125,12 @@ const Login= () => {
           </div>
           <Button name="LogIn" type="submit"/>
         </form>
-        <Button name="Login with Google" type="button" click={handleGoogleLogin}/>
-        <Button
+        <Button2 name="Login with Google" type="button" click={handleGoogleLogin}/>
+        <Button2
           name="Login with Facebook"
           type="button"
           click={handleFacebookLogin}/>
-        <Button name="Login with Github" type="button" click={handleGithubLogin}/>
+        <Button2 name="Login with Github" type="button" click={handleGithubLogin}/>
         <a href="#!" onClick={handleResetPassword}>
           Forgot your password?
         </a>
