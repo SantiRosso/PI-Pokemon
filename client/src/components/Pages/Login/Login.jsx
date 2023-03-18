@@ -7,6 +7,9 @@ import s from "./Login.module.css"
 //components
 import Button from "../../Button/Button"
 import Button2 from "../../Button2/Button2"
+import Input from "../../Input/Input"
+//images
+import pokedex from "../../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 
 const Login= () => {
 
@@ -102,10 +105,11 @@ const Login= () => {
 
     return(
       <div className={s.container}>
+        <h1>Login</h1>
         <form className={s.form} onSubmit={handelSubmitLogin}>
           <div className={s.email}>
             <label htmlFor="email">Email:</label>
-              <input
+              <Input
                 type="email"
                 name="email"
                 placeholder="example@email.com"
@@ -115,11 +119,11 @@ const Login= () => {
           </div>
           <div className={s.password}>
             <label htmlFor="password">Password:</label>
-              <input
+              <Input
                 type="password"
                 name="password"
                 placeholder="******"
-                onChange={handleChangeLogin}
+                change={handleChangeLogin}
                 requided
               />
           </div>
