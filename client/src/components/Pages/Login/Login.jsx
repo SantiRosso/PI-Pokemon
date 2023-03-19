@@ -139,12 +139,15 @@ const Login= () => {
           </div>
           <Button name="LogIn" type="submit"/>
         </form>
-        <Button2 name="Login with Google" type="button" click={handleGoogleLogin}/>
-        <Button2
+        <div className={s.buttons}>
+          <Button2 name="Login with Google" type="button" click={handleGoogleLogin}/>
+          <Button2
           name="Login with Facebook"
           type="button"
           click={handleFacebookLogin}/>
-        <Button2 name="Login with Github" type="button" click={handleGithubLogin}/>
+          <Button2 name="Login with Github" type="button" click={handleGithubLogin}/>
+        </div>
+        
         <a className={s.a} href="#!" onClick={handleResetPassword}>
           Forgot your password?
         </a>
