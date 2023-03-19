@@ -55,35 +55,41 @@ const Register = () => {
     };
 
     return(
-        <div className={s.container}>
-            <form
-              className={s.form}
-              onSubmit={handelSubmitRegister}
-            >
-                <div className={s.email}>
-                    <label className={s.title} htmlFor="email">Email:</label>
-                    <Input
-                        type="email"
-                        name="email"
-                        placeholder="example@email.com"
-                        onChange={handleChangeRegister}
-                        requided
-                    />
+        <div>
+            <Button name="Home" route="/home" />
+            <div className={s.container}>
+                <div className={s.title}>
+                    <img src={pokedex} alt="Pokedex" /> 
                 </div>
-                <div className={s.password}>
-                    <label className={s.title}  htmlFor="password">Password:</label>
-                    <Input
-                        type="password"
-                        name="password"
-                        placeholder="******"
-                        onChange={handleChangeRegister}
-                        requided
-                    />
-                </div>
-                <Button name="Register" type="submit"/>
-            </form>
+                <form
+                className={s.form}
+                onSubmit={handelSubmitRegister}
+                >
+                    <div className={s.email}>
+                        <label className={s.title} htmlFor="email">Email:</label>
+                        <Input
+                            type="email"
+                            name="email"
+                            placeholder="example@email.com"
+                            onChange={handleChangeRegister}
+                            requided
+                        />
+                    </div>
+                    <div className={s.password}>
+                        <label className={s.title}  htmlFor="password">Password:</label>
+                        <Input
+                            type="password"
+                            name="password"
+                            placeholder="******"
+                            onChange={handleChangeRegister}
+                            requided
+                        />
+                    </div>
+                    <Button name="Register" type="submit"/>
+                </form>
+            </div>
+            <Footer/>
         </div>
-        
     )
 }
 
