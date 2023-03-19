@@ -2,6 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../../context/authContext.js";
 import { showMessage } from "../../../ShowMessage.js"
+//styles
+import s from "./Register.module.css"
+//components
+import Button from "../../Button/Button"
+import Input from "../../Input/Input"
+//images
+import pokedex from "../../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
+import Footer from "../../Footer/Footer.jsx";
 
 const Register = () => {
 
@@ -47,28 +55,35 @@ const Register = () => {
     };
 
     return(
-        <form
-              className="form"
+        <div className={s.container}>
+            <form
+              className={s.form}
               onSubmit={handelSubmitRegister}
             >
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="example@email.com"
-                onChange={handleChangeRegister}
-                requided
-              />
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                name="password"
-                placeholder="******"
-                onChange={handleChangeRegister}
-                requided
-              />
-              <button type="submit">Register</button>
-        </form>
+                <div className={s.email}>
+                    <label className={s.title} htmlFor="email">Email:</label>
+                    <Input
+                        type="email"
+                        name="email"
+                        placeholder="example@email.com"
+                        onChange={handleChangeRegister}
+                        requided
+                    />
+                </div>
+                <div className={s.password}>
+                    <label className={s.title}  htmlFor="password">Password:</label>
+                    <Input
+                        type="password"
+                        name="password"
+                        placeholder="******"
+                        onChange={handleChangeRegister}
+                        requided
+                    />
+                </div>
+                <Button name="Register" type="submit"/>
+            </form>
+        </div>
+        
     )
 }
 
