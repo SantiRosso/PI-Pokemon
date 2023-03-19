@@ -7,7 +7,7 @@ const Input = ({name, change, placeholder, type}) => {
     }
 
     return(
-        <input className={s.input} name={name} type={type} onClick={handleChange} placeholder={placeholder}/>
+        <input className={s.input} name={name} type={type} onClick={handleChange} placeholder={placeholder} required/>
     )
 }
 

@@ -72,7 +72,6 @@ const Register = () => {
                             name="email"
                             placeholder="example@email.com"
                             onChange={handleChangeRegister}
-                            requided
                         />
                     </div>
                     <div className={s.password}>
@@ -82,7 +81,6 @@ const Register = () => {
                             name="password"
                             placeholder="******"
                             onChange={handleChangeRegister}
-                            requided
                         />
                     </div>
                     <Button name="Register" type="submit"/>

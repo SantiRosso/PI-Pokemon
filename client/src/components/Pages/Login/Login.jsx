@@ -124,7 +124,6 @@ const Login= () => {
                 name="email"
                 placeholder="example@email.com"
                 onChange={handleChangeLogin}
-                requided
               />
             </div>
           <div className={s.password}>
@@ -134,7 +133,6 @@ const Login= () => {
                 name="password"
                 placeholder="******"
                 change={handleChangeLogin}
-                requided
               />
           </div>
           <Button name="LogIn" type="submit"/>
