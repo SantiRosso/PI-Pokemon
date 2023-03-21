@@ -34,20 +34,27 @@ const PokemonDetail = () => {
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
             <div className={s.container}>
-                <h1>{detail?.name}</h1>
+                <h1>{detail?.name.toUpperCase()}</h1>
                 <div className={s.info}>
                     <img src={detail?.image.front_default} alt={detail?.name} />
                     <div className={s.grid}>
                         <div>
-                            <h1>TYPES: {detail?.types}</h1>
-                            <h1>HP: {detail?.hp}</h1>
+                            <h1 className={s.h1}>TYPES:</h1>
+                            {
+                                detail?.types.map((e) => {
+                                    return(
+                                         <h3 className={s.h1}>{e.toUpperCase()}</h3>
+                                    )
+                                })
+                            }
+                            <h1 className={s.h1}>HP: {detail?.hp}</h1>
+                            <h1 className={s.h1}>ATTACK: {detail?.attack}</h1>
                         </div>
                         <div>
-                            <h1>ATTACK: {detail?.attack}</h1>
-                            <h1>DEFENSE: {detail?.defense}</h1>
-                            <h1>SPEED: {detail?.speed}</h1>
-                            <h1>HEIGHT: {detail?.height}</h1>
-                            <h1>WEIGHT:{detail?.weight}</h1>
+                            <h1 className={s.h1}>DEFENSE: {detail?.defense}</h1>
+                            <h1 className={s.h1}>SPEED: {detail?.speed}</h1>
+                            <h1 className={s.h1}>HEIGHT: {detail?.height}</h1>
+                            <h1 className={s.h1}>WEIGHT: {detail?.weight}</h1>
                         </div>
                     </div>
                 </div> 
