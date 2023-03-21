@@ -3,10 +3,6 @@
     justify-content: center;
 }
 
-.info{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
 
 .container{
     display: flex;
@@ -16,4 +12,16 @@
     border: 2px solid black;
     border-radius: 20%;
     color: white;
+}
+
+.info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 75%;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
