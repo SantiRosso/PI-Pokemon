@@ -9,8 +9,10 @@
     align-items: center;
     background-color: rgba(0, 0, 0, 0.552);
     border: 2px solid black;
-    border-radius: 20%;
+    border-radius: 2%;
     color: white;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .info{
@@ -18,6 +20,7 @@
     justify-content: space-around;
     align-items: center;
     width: 75%;
+    overflow: hidden;
 }
 
 .grid{
@@ -31,6 +34,15 @@
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.51);
     border: 2px solid white;
-    border-radius: 20%;
+    border-radius: 2%;
     width: 75%;
+}
+
+.name{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.51);
+    border: 2px solid white;
+    border-radius: 2%;
+    width: 50%;
 }

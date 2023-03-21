@@ -34,7 +34,7 @@ const PokemonDetail = () => {
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
             <div className={s.container}>
-                <h1>{detail?.name.toUpperCase()}</h1>
+                <h1 className={s.name}>{detail?.name.toUpperCase()}</h1>
                 <div className={s.info}>
                     <img src={detail?.image.front_default} alt={detail?.name} />
                     <div className={s.grid}>
