@@ -1,20 +1,33 @@
-// import { useModal } from "../../Hooks/useModal"
 //components
 import Modal from "./Modal"
-// import Button from "../Button/Button"
 //images
 import soon from "../Home/images/soon.jpeg" 
 
 const CreatePokemonModal = ({isOpen, closeModal}) => {
-    // const [isOpenModal1, OpenModal1, closeModal1] = useModal(false)
 
     return(
         <div>
-            {/* <Button name="Create Pokemon" click={OpenModal1}/> */}
             <Modal isOpen={isOpen} closeModal={closeModal}>
                 <div className="modal-content">
                     <h1>Create Pokemon</h1>
-                    <img src={soon} alt="Pokedex" />
+                    <label htmlFor="">Name:</label>
+                    <input type="text" />
+                    <label htmlFor="">HP</label>
+                    <input type="text" />
+                    <label htmlFor="">Attack</label>
+                    <input type="text" />
+                    <label htmlFor="">Defense</label>
+                    <input type="text" />
+                    <label htmlFor="">Speed</label>
+                    <input type="text" />
+                    <label htmlFor="">Height</label>
+                    <input type="text" />
+                    <label htmlFor="">Weight</label>
+                    <input type="text" />
+                    <label htmlFor="">imgUrl</label>
+                    <input type="text" />
+                    <label htmlFor="">Types</label>
+                    <input type="text" />
                 </div>
             </Modal>
         </div>

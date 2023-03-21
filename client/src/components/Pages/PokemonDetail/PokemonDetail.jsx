@@ -18,7 +18,7 @@ const PokemonDetail = () => {
     const [detail, setDetail] = useState();
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/pokemons/${id.id}`)
+        axios.get(`/pokemons/${id.id}`)
         .then(response => setDetail(response.data))
     },[id])
 
