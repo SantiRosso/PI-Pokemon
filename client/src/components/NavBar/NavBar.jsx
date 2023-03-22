@@ -4,12 +4,20 @@ import pokedex from "./pokedex.png"
 //styles
 import s from "./NavBar.module.css";
 //components
-// import SearchBar from "../SearchBar/SearchBar";
+import Button from "../Button/Button";
+import SideBar from "../SideBar/SideBar";
 //react icons
 import {TfiMenu} from "react-icons/tfi"
-import Button from "../Button/Button";
+import { useState } from "react";
 
 const NavBar = () => {
+
+    const [sideBar, setSideBar] = useState(false)
+
+    const sidebar = () => {
+        setSideBar(!sideBar)
+    }
+
     return(
         <div className={s.navBar}>
             <Link to="/home">
@@ -18,9 +26,9 @@ const NavBar = () => {
             </Link>
             {/* <SearchBar/> */}
             <div>
-                <Button name={"Menu"} icon={<TfiMenu/>}/>
+                <Button name={"Menu"} icon={<TfiMenu/>} click={sidebar}/>
             </div>
-            
+            {sideBar && <SideBar/>}
         </div>
     )
 }
