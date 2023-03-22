@@ -27,6 +27,8 @@
     width: 50%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
 }
 
 .h1{
@@ -45,4 +47,11 @@
     border: 2px solid white;
     border-radius: 2%;
     width: 50%;
+}
+
+.gridItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
 }

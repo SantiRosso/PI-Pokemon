@@ -43,18 +43,24 @@ const PokemonDetail = () => {
                             {
                                 detail?.types.map((e) => {
                                     return(
-                                         <h3 className={s.h1}>{e.toUpperCase()}</h3>
+                                         <h3 className={s.gridItem}>{e.toUpperCase()}</h3>
                                     )
                                 })
                             }
-                            <h1 className={s.h1}>HP: {detail?.hp}</h1>
-                            <h1 className={s.h1}>ATTACK: {detail?.attack}</h1>
+                            <h1 className={s.h1}>HP:</h1>
+                            <h3 className={s.gridItem}>{detail?.hp}</h3>
+                            <h1 className={s.h1}>ATTACK:</h1>
+                            <h3 className={s.gridItem}>{detail?.attack}</h3>
                         </div>
                         <div>
-                            <h1 className={s.h1}>DEFENSE: {detail?.defense}</h1>
-                            <h1 className={s.h1}>SPEED: {detail?.speed}</h1>
-                            <h1 className={s.h1}>HEIGHT: {detail?.height}</h1>
-                            <h1 className={s.h1}>WEIGHT: {detail?.weight}</h1>
+                            <h1 className={s.h1}>DEFENSE:</h1>
+                            <h3 className={s.gridItem}>{detail?.defense}</h3>
+                            <h1 className={s.h1}>SPEED:</h1>
+                            <h3 className={s.gridItem}>{detail?.speed}</h3>
+                            <h1 className={s.h1}>HEIGHT:</h1>
+                            <h3 className={s.gridItem}>{detail?.height}</h3>
+                            <h1 className={s.h1}>WEIGHT:</h1>
+                            <h3 className={s.gridItem}>{detail?.weight}</h3>
                         </div>
                     </div>
                 </div> 
