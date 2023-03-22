@@ -1,15 +1,17 @@
 .container{
     border: 2px solid black;
-    background-color: white;
+    border-radius: 2%;
+    /* background-color: white; */
+    background-image: linear-gradient(to right top, #000000, #41101d, #800929, #c10029, #ff0017);
     position: fixed;
-    top: 6%;
-    right: 0;
-    height: 100vh;
+    top: 8%;
+    right: 2%;
+    height: 90vh;
     width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
 }
 
 .buttons{
