@@ -9,4 +9,16 @@ const getComments = async () => {
   }
 };
 
-module.exports = { getComments };
+const deleteComment = async (id) => {
+  try {
+    await Comment.destroy({
+      where: {
+        id,
+      },
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+module.exports = { getComments, deleteComment };
