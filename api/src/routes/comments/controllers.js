@@ -37,4 +37,15 @@ const createComment = async (text, userId) => {
   }
 };
 
-module.exports = { getComments, deleteComment, createComment };
+const updateComment = async (id, text) => {
+  try {
+    const comment = Comment.findByPk(id);
+
+    comment.text = text;
+    comment.save();
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+module.exports = { getComments, deleteComment, createComment, updateComment };

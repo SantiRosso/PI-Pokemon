@@ -38,7 +38,8 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    await updateComment(id);
+    const { text } = req.body;
+    await updateComment(id, text);
     res.sendSatatus(204);
   } catch (error) {
     res.status(500).send(error.message);
