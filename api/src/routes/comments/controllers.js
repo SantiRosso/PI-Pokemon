@@ -21,4 +21,20 @@ const deleteComment = async (id) => {
   }
 };
 
+const createComment = async (text, userId) => {
+  try {
+    const comment = await Comment.create({
+      where: {
+        text,
+      },
+    });
+
+    const user = await userId.findByPk(userId);
+
+    user.addComment(comment);
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 module.exports = { getComments, deleteComment };
