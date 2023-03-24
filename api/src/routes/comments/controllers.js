@@ -37,4 +37,4 @@ const createComment = async (text, userId) => {
   }
 };
 
-module.exports = { getComments, deleteComment };
+module.exports = { getComments, deleteComment, createComment };
