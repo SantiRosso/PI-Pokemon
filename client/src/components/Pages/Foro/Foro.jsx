@@ -25,8 +25,13 @@ const Foro = () => {
             <div className={s.title}>
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
-            <h1>Foro</h1>
-            <img src={soon} alt="Pokedex" /> 
+            <div className={s.container}>
+                <h1>Foro</h1>
+                <div className={s.chat}>
+                    <h1>asdasd</h1>
+                </div>
+            </div>
+            {/* <img src={soon} alt="Pokedex" />  */}
             <Footer/>
         </div>
     )
