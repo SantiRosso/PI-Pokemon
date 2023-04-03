@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import {useNavigate } from "react-router-dom"
 //components
 import Footer from "../../Footer/Footer";
@@ -17,6 +19,18 @@ const Foro = () => {
     const handleClickBack = () => {
         navigate("/home")
     }
+
+    const [comments, setComments] = useState({comments:""})
+
+    const getComments = async () => {
+        setComments(comments.comments = await axios.get("/comments"))
+    }
+
+    useEffect(() => {
+        if(!comments){
+            getComments()
+        }
+    })
     
     return(
         <div>
