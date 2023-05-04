@@ -1,7 +1,5 @@
 //components
 import Modal from "./Modal"
-//images
-import soon from "../Home/images/soon.jpeg" 
 
 const CreatePokemonModal = ({isOpen, closeModal}) => {
 

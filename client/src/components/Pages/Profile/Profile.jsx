@@ -27,6 +27,14 @@ const Profile = () => {
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
             <h1>Profile</h1>
+            <h6>Name:</h6>
+            <h6>Email:</h6>
+            <h6>Password:</h6>
+            <h6>Image:</h6>
+            <h6>Country:</h6>
+            <h6>Age:</h6>
+            <h6>Sex:</h6>
+            <h6>Fav Type:</h6>
             <img src={soon} alt="Pokedex" />
             <Footer/>
         </div>
