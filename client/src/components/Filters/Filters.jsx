@@ -13,7 +13,7 @@ const Filters = () => {
 
     useEffect(()=> {
         if(!types) dispatch(getTypes())
-        dispatch(getFilters(filters))
+        dispatch(getFilters(filters)) //Así o hacer los filtros desde el back
     })
 
     const handleChange = (e) => {

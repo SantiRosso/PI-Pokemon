@@ -2,6 +2,7 @@ import {
   GET_ALL_POKEMONS,
   GET_POKEMON_BY_NAME,
   RESET_FILTERS,
+  GET_FILTERS,
 } from "./actions";
 
 const initialState = {
@@ -27,6 +28,17 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         filtered: state.pokemons,
+      };
+    case GET_FILTERS:
+      let pokes = [];
+      if (action.payload.types) {
+        pokes = state.pokemons.filter((e) =>
+          e.types.includes(action.payload.types)
+        );
+      }
+      return {
+        ...state,
+        filtered: pokes,
       };
     default:
       return { ...state };

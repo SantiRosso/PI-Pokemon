@@ -4,6 +4,7 @@ import { showMessage } from "../ShowMessage";
 export const GET_ALL_POKEMONS = "GET_ALL_POKEMONS";
 export const GET_POKEMON_BY_NAME = "GET_POKEMON_BY_NAME";
 export const RESET_FILTERS = "RESET_FILTERS";
+export const GET_FILTERS = "GET_FILTERS";
 
 export const getAllPokemons = () => {
   return async (dispatch) => {
@@ -26,5 +27,11 @@ export const getPokemonByName = (name) => {
 export const resetFilters = (dispatch) => {
   return (dispatch) => {
     return dispatch({ type: RESET_FILTERS });
+  };
+};
+
+export const getFilters = (payload) => {
+  return async (dispatch) => {
+    return dispatch({ type: GET_FILTERS, payload });
   };
 };
