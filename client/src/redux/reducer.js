@@ -36,6 +36,22 @@ const rootReducer = (state = initialState, action) => {
           e.types.includes(action.payload.types)
         );
       }
+      if (action.payload.alphabet) {
+        pokes =
+          action.payload === "A-Z"
+            ? pokes.sort((a, b) => {
+                if (a.name > b.name) return 1;
+                if (a.name < b.name) return -1;
+                return 0;
+              })
+            : action.payload === "Z-A"
+            ? state.filtered.sort((a, b) => {
+                if (a.name < b.name) return 1;
+                if (a.name > b.name) return -1;
+                return 0;
+              })
+            : [...state.filtered];
+      }
       return {
         ...state,
         filtered: pokes,

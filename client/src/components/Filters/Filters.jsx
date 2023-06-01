@@ -8,7 +8,8 @@ const Filters = () => {
     const dispatch = useDispatch()
 
     const [filters, setFilters] = useState({
-        types: ""
+        types: "",
+        alphabet: "",
     });
 
     useEffect(()=> {
@@ -38,7 +39,11 @@ const Filters = () => {
             </select>
             <h4>Order by:</h4>
             <p>Alphabet</p>
-            <select name="" id="2"></select>
+            <select name="alphabet" id="2" onClick={handleChange}>
+                <option value="...">...</option>
+                <option value="A-Z">A-Z</option>
+                <option value="Z-A">Z-A</option>
+            </select>
             <p>Attack</p>
             <select name="" id="3"></select>
         </div>
