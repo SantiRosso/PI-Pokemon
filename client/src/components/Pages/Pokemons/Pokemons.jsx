@@ -15,11 +15,18 @@ import Loader from "../../Loader/Loader"
 import pokedex from "../../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 //react icons
 import {RiArrowGoBackFill} from "react-icons/ri"
+import Pagination from "../../Pagination/Pagination";
 
 const Pokemons = () => {
     const dispatch = useDispatch()
     const pokemons = useSelector((state) => state.filtered)
     const navigate = useNavigate()
+
+    //Pagination 
+        const [input, setInput] = useState(1);
+        const [page, setPage] = useState(1);
+        const [perPage] = useState(15);
+        let max = Math.ceil(pokemons.length / perPage);
 
     useEffect(()=>{
         if(!pokemons.length)
@@ -46,6 +53,7 @@ const Pokemons = () => {
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
             <SearchBar/>
+            <Pagination page={page} setPage={setPage} input={input} setInput={setInput} max={max}/>
             <div className={s.pokemonsContainer}>
                 {
                     pokemons?.length ? pokemons?.map((e, i) => {
