@@ -1,19 +1,29 @@
 const Pagination = ({input, setInput, page, setPage, max}) => {
 
     const handleChange = (e) => {
-        console.log("hableChange")
+        setInput(e.target.value)
     }
 
     const previousPage = () => {
-        console.log("previousPage")
+        setInput (input -1)
+        setPage (page -1)
     }
 
     const nextPage = () => {
-        console.log("nextPage")
+        setInput(input +1)
+        setPage (page +1)
     }
 
     const onKeyDown = (e) => {
-        console.log("onKeyDown")
+        if(e.keyCode === 13) {
+            setPage(parseInt(e.target.value))
+            if(parseInt(e.target.value) < 1 || parseInt(e.target.value) > max || isNaN(parseInt(e.target.value))){
+                setPage(1)
+                setInput(1)
+            } else {
+                setPage(parseInt(e.target.value))
+            }
+        }
     }
 
     return(
