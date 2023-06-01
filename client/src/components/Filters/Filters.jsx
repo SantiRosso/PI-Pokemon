@@ -10,6 +10,7 @@ const Filters = () => {
     const [filters, setFilters] = useState({
         types: "",
         alphabet: "",
+        attack: "",
     });
 
     useEffect(()=> {
@@ -27,7 +28,7 @@ const Filters = () => {
         <div>
             <h4>Filters</h4>
             <p>Types</p>
-            <select name="types" id="1" onClick={handleChange}>
+            <select name="types" id="1" onChange={handleChange}>
                 <option value="TYPES">TYPES</option>
                 {
                     types?.map((type, i) => {
@@ -39,13 +40,17 @@ const Filters = () => {
             </select>
             <h4>Order by:</h4>
             <p>Alphabet</p>
-            <select name="alphabet" id="2" onClick={handleChange}>
+            <select name="alphabet" id="2" onChange={handleChange}>
                 <option value="...">...</option>
                 <option value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>
             </select>
             <p>Attack</p>
-            <select name="" id="3"></select>
+            <select name="attack" id="3" onChange={handleChange}>
+                <option value="...">...</option>
+                <option value="men">{"<"}</option>
+                <option value="may">{">"}</option>
+            </select>
         </div>
     )
 }

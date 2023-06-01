@@ -45,12 +45,20 @@ const rootReducer = (state = initialState, action) => {
                 return 0;
               })
             : action.payload === "Z-A"
-            ? state.filtered.sort((a, b) => {
+            ? pokes.sort((a, b) => {
                 if (a.name < b.name) return 1;
                 if (a.name > b.name) return -1;
                 return 0;
               })
-            : [...state.filtered];
+            : [...pokes];
+      }
+      if (action.payload.attack) {
+        pokes =
+          action.payload === "men"
+            ? pokes.sort((a, b) => a.attack - b.attack)
+            : action.payload === "may"
+            ? pokes.sort((a, b) => b.attack - a.attack)
+            : [...pokes];
       }
       return {
         ...state,
