@@ -25,7 +25,7 @@ const Pokemons = () => {
     //Pagination 
         const [input, setInput] = useState(1);
         const [page, setPage] = useState(1);
-        const [perPage] = useState(15);
+        const [perPage] = useState(18);
         let max = Math.ceil(pokemons.length / perPage);
 
     useEffect(()=>{
@@ -53,16 +53,18 @@ const Pokemons = () => {
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
             <SearchBar/>
-            <Pagination page={page} setPage={setPage} input={input} setInput={setInput} max={max}/>
             <div className={s.pokemonsContainer}>
                 {
-                    pokemons?.length ? pokemons?.map((e, i) => {
+                    pokemons?.length ? pokemons?.slice((page -1) * perPage, (page -1) * perPage + perPage).map((e, i) => {
                         return(
                             <Card key={i} id={e.id} name={e.name} types={e.types} image={e.image?.front_default || "https://w7.pngwing.com/pngs/620/521/png-transparent-poke-ball-pokemon-pokemon-rim-mobile-phones-pokemon.png"}/>
                         )
                     })
                     : <Loader/>
                 }  
+            </div>
+            <div className={s.pagination}>
+                <Pagination page={page} setPage={setPage} input={input} setInput={setInput} max={max}/>
             </div>
                 <Footer/> 
         </div>
