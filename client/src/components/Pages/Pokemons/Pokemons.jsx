@@ -40,6 +40,9 @@ const Pokemons = () => {
 
     const handleClickReset = () => {
         dispatch(resetFilters())
+        document.getElementById("1").selected = "selected"
+        document.getElementById("2").selected = "selected"
+        document.getElementById("3").selected = "selected"
     }
 
     //Order by...

@@ -43,8 +43,8 @@ const Filters = ({order, setOrder}) => {
             <div>
                 <div className={s.subdiv}>
                     <p>Types</p>
-                    <select className={s.select} name="types" id="1" onChange={handleChange}>
-                        <option value="TYPES">TYPES</option>
+                    <select className={s.select} name="types"  onChange={handleChange}>
+                        <option value="TYPES" id="1">TYPES</option>
                         {
                             types?.map((type, i) => {
                                 return(
@@ -60,16 +60,16 @@ const Filters = ({order, setOrder}) => {
             </div>
             <div className={s.subdiv}> 
                 <p>Alphabet</p>
-                <select className={s.select} name="alphabet" id="2" onChange={handleOrderAlphabet}>
-                    <option value="...">...</option>
+                <select className={s.select} name="alphabet"  onChange={handleOrderAlphabet}>
+                    <option value="..." id="2" >...</option>
                     <option value="A-Z">A-Z</option>
                     <option value="Z-A">Z-A</option>
                 </select>
             </div>
             <div className={s.subdiv}>
                 <p>Attack</p>
-                <select className={s.select} name="attack" id="3" onChange={handleOrderAttack}>
-                    <option value="...">...</option>
+                <select className={s.select} name="attack"  onChange={handleOrderAttack}>
+                    <option value="..." id="3">...</option>
                     <option value="men">{"<"}</option>
                     <option value="may">{">"}</option>
                 </select>
