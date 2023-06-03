@@ -52,15 +52,13 @@ const Pokemons = () => {
                 <Button name="Back" icon={<RiArrowGoBackFill/>} click={handleClickBack}/>
                 <Button name="Reset Filters" click={handleClickReset}/>
             </div>
-            
             <div className={s.title}>
                 <img src={pokedex} alt="Pokedex" /> 
             </div>
-
-            <div>
+            <SearchBar/>
+            <div className={s.filters}>
                 <Filters order={order} setOrder={setOrder}/>
             </div>
-            <SearchBar/>
             <div className={s.pokemonsContainer}>
                 {
                     pokemons?.length ? pokemons?.slice((page -1) * perPage, (page -1) * perPage + perPage).map((e, i) => {

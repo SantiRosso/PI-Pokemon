@@ -21,7 +21,6 @@ const getPokemonsApi = async () => {
         };
       })
     );
-    console.log(pokemonsDetails[1]);
     return pokemonsDetails;
   } catch (error) {
     throw new Error(error);
