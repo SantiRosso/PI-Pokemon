@@ -17,10 +17,11 @@ const getPokemonsApi = async () => {
           id: result.data.id,
           types: result.data.types.map((e) => e.type.name),
           image: result.data.sprites.other.home,
+          attack: result.data.stats[1].base_stat,
         };
       })
     );
-    console.log(pokemonsDetails);
+    console.log(pokemonsDetails[1]);
     return pokemonsDetails;
   } catch (error) {
     throw new Error(error);

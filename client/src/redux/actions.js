@@ -41,14 +41,12 @@ export const getFilters = (payload) => {
 
 export const getOrderAlphabet = (payload) => {
   return async (dispatch) => {
-    console.log(payload);
     return dispatch({ type: GET_ORDER_ALPHABET, payload });
   };
 };
 
 export const getOrderAttack = (payload) => {
   return async (dispatch) => {
-    console.log(payload);
     return dispatch({ type: GET_ORDER_ATTACK, payload });
   };
 };

@@ -69,7 +69,6 @@ const rootReducer = (state = initialState, action) => {
           : action.payload === "may"
           ? state.filtered.sort((a, b) => b.attack - a.attack)
           : [...state.filtered];
-      console.log(state.filtered);
       return {
         ...state,
         filtered: orderByAttack,
