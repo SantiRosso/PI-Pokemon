@@ -5,6 +5,7 @@ export const GET_ALL_POKEMONS = "GET_ALL_POKEMONS";
 export const GET_POKEMON_BY_NAME = "GET_POKEMON_BY_NAME";
 export const RESET_FILTERS = "RESET_FILTERS";
 export const GET_FILTERS = "GET_FILTERS";
+export const GET_TYPES = "GET_TYPES";
 
 export const getAllPokemons = () => {
   return async (dispatch) => {
@@ -32,6 +33,14 @@ export const resetFilters = (dispatch) => {
 
 export const getFilters = (payload) => {
   return async (dispatch) => {
+    console.log("actions", payload);
     return dispatch({ type: GET_FILTERS, payload });
+  };
+};
+
+export const getTypes = () => {
+  return async (dispatch) => {
+    const types = await axios.get("/types");
+    return dispatch({ type: GET_TYPES, payload: types.data });
   };
 };

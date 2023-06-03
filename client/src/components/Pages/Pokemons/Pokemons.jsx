@@ -11,11 +11,13 @@ import Footer from "../../Footer/Footer";
 import SearchBar from "../../SearchBar/SearchBar"
 import Button from "../../Button/Button";
 import Loader from "../../Loader/Loader"
+import Filter from "../../Filters/Filters";
 //images
 import pokedex from "../../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 //react icons
 import {RiArrowGoBackFill} from "react-icons/ri"
 import Pagination from "../../Pagination/Pagination";
+import Filters from "../../Filters/Filters";
 
 const Pokemons = () => {
     const dispatch = useDispatch()
@@ -51,6 +53,10 @@ const Pokemons = () => {
             
             <div className={s.title}>
                 <img src={pokedex} alt="Pokedex" /> 
+            </div>
+
+            <div>
+                <Filters/>
             </div>
             <SearchBar/>
             <div className={s.pokemonsContainer}>
