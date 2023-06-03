@@ -11,13 +11,12 @@ import Footer from "../../Footer/Footer";
 import SearchBar from "../../SearchBar/SearchBar"
 import Button from "../../Button/Button";
 import Loader from "../../Loader/Loader"
-import Filter from "../../Filters/Filters";
+import Filters from "../../Filters/Filters";
+import Pagination from "../../Pagination/Pagination";
 //images
 import pokedex from "../../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 //react icons
 import {RiArrowGoBackFill} from "react-icons/ri"
-import Pagination from "../../Pagination/Pagination";
-import Filters from "../../Filters/Filters";
 
 const Pokemons = () => {
     const dispatch = useDispatch()
@@ -43,6 +42,9 @@ const Pokemons = () => {
         dispatch(resetFilters())
     }
 
+    //Order by...
+    const [order, setOrder] = useState(false)
+
     return(
         <div>
             <NavBar/>
@@ -56,7 +58,7 @@ const Pokemons = () => {
             </div>
 
             <div>
-                <Filters/>
+                <Filters order={order} setOrder={setOrder}/>
             </div>
             <SearchBar/>
             <div className={s.pokemonsContainer}>

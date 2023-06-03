@@ -6,6 +6,8 @@ export const GET_POKEMON_BY_NAME = "GET_POKEMON_BY_NAME";
 export const RESET_FILTERS = "RESET_FILTERS";
 export const GET_FILTERS = "GET_FILTERS";
 export const GET_TYPES = "GET_TYPES";
+export const GET_ORDER_ALPHABET = "GET_ORDER_ALPHABET";
+export const GET_ORDER_ATTACK = "GET_ORDER_ATTACK";
 
 export const getAllPokemons = () => {
   return async (dispatch) => {
@@ -33,8 +35,21 @@ export const resetFilters = (dispatch) => {
 
 export const getFilters = (payload) => {
   return async (dispatch) => {
-    console.log("actions", payload);
     return dispatch({ type: GET_FILTERS, payload });
+  };
+};
+
+export const getOrderAlphabet = (payload) => {
+  return async (dispatch) => {
+    console.log(payload);
+    return dispatch({ type: GET_ORDER_ALPHABET, payload });
+  };
+};
+
+export const getOrderAttack = (payload) => {
+  return async (dispatch) => {
+    console.log(payload);
+    return dispatch({ type: GET_ORDER_ATTACK, payload });
   };
 };
 

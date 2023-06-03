@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTypes, getFilters } from "../../redux/actions.js"
+import { getTypes, getFilters, getOrderAlphabet, getOrderAttack } from "../../redux/actions.js"
 
-const Filters = () => {
+const Filters = ({order, setOrder}) => {
 
     const types = useSelector((state) => state.types);
     const dispatch = useDispatch()
 
     const [filters, setFilters] = useState({
         types: "",
-        alphabet: "",
-        attack: "",
     });
 
     useEffect(()=> {
@@ -20,8 +18,19 @@ const Filters = () => {
 
     const handleChange = (e) => {
         setFilters({
+            ...filters,
             [e.target.name]: e.target.value,
         })
+    }
+
+    const handleOrderAlphabet = (e) => {
+        dispatch(getOrderAlphabet(e.target.value))
+        setOrder(!order)
+    }
+
+    const handleOrderAttack = (e) => {
+        dispatch(getOrderAttack(e.target.value))
+        setOrder(!order)
     }
 
     return(
@@ -40,13 +49,13 @@ const Filters = () => {
             </select>
             <h4>Order by:</h4>
             <p>Alphabet</p>
-            <select name="alphabet" id="2" onChange={handleChange}>
+            <select name="alphabet" id="2" onChange={handleOrderAlphabet}>
                 <option value="...">...</option>
                 <option value="A-Z">A-Z</option>
                 <option value="Z-A">Z-A</option>
             </select>
             <p>Attack</p>
-            <select name="attack" id="3" onChange={handleChange}>
+            <select name="attack" id="3" onChange={handleOrderAttack}>
                 <option value="...">...</option>
                 <option value="men">{"<"}</option>
                 <option value="may">{">"}</option>
