@@ -56,7 +56,7 @@ const Filters = ({order, setOrder}) => {
                 </div>
             </div> 
             <div>
-                <h4>Order by:</h4>
+                <h4>Sort by:</h4>
             </div>
             <div className={s.subdiv}> 
                 <p>Alphabet</p>
