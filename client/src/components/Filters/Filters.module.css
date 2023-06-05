@@ -20,4 +20,7 @@
 .select{
     height: 30px;
     margin-left: 5px;
+    background-image: linear-gradient(to right top, #000000, #41101d, #800929, #c10029, #ff0017);
+    border: 2px solid black;
+    border-radius: 5px;
 }

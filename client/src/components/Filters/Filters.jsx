@@ -48,7 +48,7 @@ const Filters = ({order, setOrder}) => {
                         {
                             types?.map((type, i) => {
                                 return(
-                                    <option key={i} value={type.name}>{type.name}</option>
+                                    <option key={i} value={type.name}>{type.name.toUpperCase()}</option>
                                 )
                             })
                         }
