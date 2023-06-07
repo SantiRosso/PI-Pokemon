@@ -1,3 +1,4 @@
+import axios from "axios";
 //components
 import { useState } from "react";
 import Modal from "./Modal"
@@ -13,14 +14,26 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
         height: "",
         weight: "",
         imgUrl: "",
-        types: "",
+        types: [],
     })
 
     const handleChange = (e) => {
-        setNewPokemon(
-            ...state,
-            [e.target.name]: e.target.value
-        )
+        if(e.target.name === "types") {
+            setNewPokemon({
+                ...newPokemon,
+                types: [...newPokemon.types, e.target.value]
+            })
+        } else {
+            setNewPokemon({
+                ...newPokemon,
+                [e.target.name]: e.target.value,
+            })
+        }
+    }
+
+    const handleSubmit = async (e) => {
+        e.prevetDefault();
+        await axios.post("/pokemons", newPokemon)
     }
 
     return(
@@ -28,24 +41,27 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
             <Modal isOpen={isOpen} closeModal={closeModal}>
                 <div className="modal-content">
                     <h1>Create Pokemon</h1>
-                    <label htmlFor="">Name:</label>
-                    <input type="text" />
-                    <label htmlFor="">HP</label>
-                    <input type="text" />
-                    <label htmlFor="">Attack</label>
-                    <input type="text" />
-                    <label htmlFor="">Defense</label>
-                    <input type="text" />
-                    <label htmlFor="">Speed</label>
-                    <input type="text" />
-                    <label htmlFor="">Height</label>
-                    <input type="text" />
-                    <label htmlFor="">Weight</label>
-                    <input type="text" />
-                    <label htmlFor="">imgUrl</label>
-                    <input type="text" />
-                    <label htmlFor="">Types</label>
-                    <input type="text" />
+                    <form onSubmit={handleSubmit}>
+                        <label htmlFor="">Name:</label>
+                        <input type="text" name="name" onChange={handleChange}/>
+                        <label htmlFor="">HP</label>
+                        <input type="text" name="hp" onChange={handleChange}/>
+                        <label htmlFor="">Attack</label>
+                        <input type="text" name="attack" onChange={handleChange}/>
+                        <label htmlFor="">Defense</label>
+                        <input type="text" name="defense" onChange={handleChange}/>
+                        <label htmlFor="">Speed</label>
+                        <input type="text" name="speed" onChange={handleChange}/>
+                        <label htmlFor="">Height</label>
+                        <input type="text" name="height" onChange={handleChange}/>
+                        <label htmlFor="">Weight</label>
+                        <input type="text" name="witght" onChange={handleChange}/>
+                        <label htmlFor="">imgUrl</label>
+                        <input type="text" name="imgurl" onChange={handleChange}/>
+                        <label htmlFor="">Types</label>
+                        <input type="text" name="types" onChange={handleChange}/> {/* select */}
+                        <button type="submit">Crear</button>
+                    </form>
                 </div>
             </Modal>
         </div>
