@@ -1,7 +1,27 @@
 //components
+import { useState } from "react";
 import Modal from "./Modal"
 
 const CreatePokemonModal = ({isOpen, closeModal}) => {
+
+    const [newPokemon, setNewPokemon] = useState({
+        name: "",
+        hp: "",
+        attack: "",
+        defense: "",
+        speed: "",
+        height: "",
+        weight: "",
+        imgUrl: "",
+        types: "",
+    })
+
+    const handleChange = (e) => {
+        setNewPokemon(
+            ...state,
+            [e.target.name]: e.target.value
+        )
+    }
 
     return(
         <div>
