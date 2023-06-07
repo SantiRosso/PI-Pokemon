@@ -1,9 +1,20 @@
 import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { getTypes } from "../../redux/actions";
 //components
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "./Modal"
 
 const CreatePokemonModal = ({isOpen, closeModal}) => {
+
+    const types = useSelector((state) => state.types)
+    const dispatch = useDispatch();
+
+    useEffect(()=> {
+        if(!types){
+            dispatch(getTypes())
+        }
+    }, [types])
 
     const [newPokemon, setNewPokemon] = useState({
         name: "",
@@ -59,7 +70,16 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
                         <label htmlFor="">imgUrl</label>
                         <input type="text" name="imgurl" onChange={handleChange}/>
                         <label htmlFor="">Types</label>
-                        <input type="text" name="types" onChange={handleChange}/> {/* select */}
+                        <select name="types" onChange={handleChange}>
+                            <option value="types" id="types">TYPES</option>
+                            {
+                                types?.map((e) => {
+                                    return(
+                                        <option key={e.id} value={e.name}>{e.name}</option>
+                                    )
+                                })
+                            }
+                        </select>
                         <button type="submit">Crear</button>
                     </form>
                 </div>
