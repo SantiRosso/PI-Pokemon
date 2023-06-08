@@ -51,6 +51,13 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
         await axios.post("/pokemons", newPokemon)
     }
 
+    const handleClickX = (e) => {
+        setNewPokemon({
+            ...newPokemon,
+            types: newPokemon.types.filter((type) => type !== e.target.value)
+        })
+    }
+
     return(
         <div>
             <Modal isOpen={isOpen} closeModal={closeModal}>
@@ -89,7 +96,7 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
                             {
                                 newPokemon.types?.map((e) => {
                                     return(
-                                       <p className={s.p}>{e}</p> 
+                                       <p className={s.p}>{e}<button value={e} onClick={handleClickX}>X</button></p> 
                                     )
                                 })
                             }
