@@ -34,6 +34,7 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
 
     const handleChange = (e) => {
         if(e.target.name === "types") {
+            if(e.target.value !== "types" && !newPokemon.types.includes(e.target.value))
             setNewPokemon({
                 ...newPokemon,
                 types: [...newPokemon.types, e.target.value]
@@ -47,7 +48,8 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
     }
 
     const handleSubmit = async (e) => {
-        e.prevetDefault();
+        e.preventDefault();
+        console.log(newPokemon)
         await axios.post("/pokemons", newPokemon)
     }
 
@@ -78,9 +80,9 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
                         <label htmlFor="height">Height</label>
                         <input type="text" name="height" id="height" className={s.input} onChange={handleChange}/>
                         <label htmlFor="weight">Weight</label>
-                        <input type="text" name="witght" id="weight" className={s.input} onChange={handleChange}/>
-                        <label htmlFor="imgurl">imgUrl</label>
-                        <input type="text" name="imgurl" id="imgurl" className={s.input} onChange={handleChange}/>
+                        <input type="text" name="weight" id="weight" className={s.input} onChange={handleChange}/>
+                        <label htmlFor="imgUrl">imgUrl</label>
+                        <input type="text" name="imgUrl" id="imgUrl" className={s.input} onChange={handleChange}/>
                         <label htmlFor="types">Types</label>
                         <select name="types" id="types" onChange={handleChange}>
                             <option value="types" id="types">TYPES</option>
@@ -96,7 +98,7 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
                             {
                                 newPokemon.types?.map((e) => {
                                     return(
-                                       <p className={s.p}>{e}<button value={e} onClick={handleClickX}>X</button></p> 
+                                       <p className={s.p}>{e}<button value={e} className={s.x} onClick={(e)=>handleClickX(e)}>X</button></p>
                                     )
                                 })
                             }
