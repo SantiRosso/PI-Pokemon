@@ -13,10 +13,12 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
     const dispatch = useDispatch();
 
     useEffect(()=> {
-        if(!types){
+        if(!types.length){
             dispatch(getTypes())
         }
     }, [types])
+
+    console.log(types)
 
     const [newPokemon, setNewPokemon] = useState({
         name: "",
@@ -83,6 +85,15 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
                                 })
                             }
                         </select>
+                        <div className={s.types}>
+                            {
+                                newPokemon.types?.map((e) => {
+                                    return(
+                                       <p className={s.p}>{e}</p> 
+                                    )
+                                })
+                            }
+                        </div>
                         <button type="submit">Crear</button>
                     </form>
                     {/* </div> */}

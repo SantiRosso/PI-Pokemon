@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 //images
 import pokedex from "./pokedex.png"
+// import logo from "../Home/images/pokedex_vector_logo_by_macoscrazy_d5uxsvu-fullview.png"
 //styles
 import s from "./NavBar.module.css";
 //components
@@ -24,6 +25,7 @@ const NavBar = () => {
                 {/* <h1>Pokedex</h1> */}
                 <img src={pokedex} alt="pokedex" className={s.image}/>
             </Link>
+            {/* <img src={logo} alt="logo" /> */}
             {/* <SearchBar/> */}
             <div>
                 <Button name={"Menu"} icon={<TfiMenu/>} click={sidebar}/>

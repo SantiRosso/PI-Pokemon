@@ -26,8 +26,9 @@
     height: 40%;
     width: 60%;
     /* overflow: auto; */
+    border: 2px solid black;
     border-radius: 2%;
-    background-color: #202020;
+    background-image: linear-gradient(to right top, #000000, #41101d, #800929, #c10029, #ff0017);
 }
 
 .modal-close{
