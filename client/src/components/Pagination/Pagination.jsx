@@ -31,10 +31,10 @@ const Pagination = ({input, setInput, page, setPage, max}) => {
     return(
         <div>
             <div className={s.container}>
-                <button className={s.button} disabled={page === 1} onClick={previousPage}>{"<"}</button>
+                <span className={s.button} disabled={page === 1} onClick={previousPage}>{"<"}</span>
                 <input className={s.input} onChange={(e) => handleChange(e)} onKeyDown={(e)=> onKeyDown(e)} type="text" name="page" autoComplete="off" value={input}/>
                 <p className={s.p}>of {max}</p>
-                <button className={s.button} disabled={page === max} onClick={nextPage}>{">"}</button>
+                <span className={s.button} disabled={page === max} onClick={nextPage}>{">"}</span>
             </div>
         </div>
     )
