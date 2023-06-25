@@ -49,7 +49,6 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(newPokemon)
         await axios.post("/pokemons", newPokemon)
     }
 
