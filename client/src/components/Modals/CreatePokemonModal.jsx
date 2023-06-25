@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { getTypes } from "../../redux/actions";
-//components
 import { useEffect, useState } from "react";
+//components
 import Modal from "./Modal"
+import Button from "../Button/Button"
 //styles
 import s from "./CreatePokemon.module.css";
 
@@ -64,7 +65,7 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
             <Modal isOpen={isOpen} closeModal={closeModal}>
                 <div className="modal-content">
                     {/* <div className={s.container}> */}
-                        <h1>Create Pokemon</h1>
+                        <h1 className={s.title}>Create Pokemon</h1>
                     <form className={s.form} onSubmit={handleSubmit}>
                         <label htmlFor="name">Name:</label>
                         <input type="text" name="name" id="name" className={s.input} onChange={handleChange}/>
@@ -83,7 +84,7 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
                         <label htmlFor="imgUrl">imgUrl</label>
                         <input type="text" name="imgUrl" id="imgUrl" className={s.input} onChange={handleChange}/>
                         <label htmlFor="types">Types</label>
-                        <select name="types" id="types" onChange={handleChange}>
+                        <select name="types" id="types" onChange={handleChange} className={s.select}>
                             <option value="types" id="types">TYPES</option>
                             {
                                 types?.map((e) => {
@@ -102,7 +103,7 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
                                 })
                             }
                         </div>
-                        <button type="submit">Crear</button>
+                        <Button type="submit" name="Crear"/>
                     </form>
                     {/* </div> */}
                 </div>
