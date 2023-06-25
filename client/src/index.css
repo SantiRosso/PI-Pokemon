@@ -9,9 +9,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+body{
+  font-family: 'Roboto Mono', monospace;
 }
 
 body::-webkit-scrollbar {

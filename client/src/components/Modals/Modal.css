@@ -35,6 +35,18 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+    background-image: linear-gradient(to right top, #f5f5f5, #e2e2e2, #d0cfd0, #bebdbd, #acabab);
+    /* box-shadow: 0px 0px 4px 2px #E9E9E9; */
+    transition: .5s;
+    color: #000000;
+    border-radius: 5px;
+    border: none;
+}
+
+.modal-close:hover{
+    background-image: linear-gradient(to right top, #000000, #41101d, #800929, #c10029, #ff0017);
+    color: #E9E9E9;
+    box-shadow: 0px 0px 4px 2px #000000;
 }
 
 .modal-content{

@@ -27,7 +27,7 @@ const NavBar = () => {
             </Link>
             {/* <img src={logo} alt="logo" /> */}
             {/* <SearchBar/> */}
-            <div>
+            <div className={s.menu}>
                 <Button name={"Menu"} icon={<TfiMenu/>} click={sidebar}/>
             </div>
             {sideBar && <SideBar/>}
