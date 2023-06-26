@@ -19,6 +19,7 @@ const Filters = ({order, setOrder}) => {
     }, [types, filters, dispatch])
 
     const handleChange = (e) => {
+        if(e.target.value !== "TYPES")
         setFilters({
             ...filters,
             [e.target.name]: e.target.value,
