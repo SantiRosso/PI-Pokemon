@@ -19,8 +19,6 @@ const CreatePokemonModal = ({isOpen, closeModal}) => {
         }
     }, [types])
 
-    console.log(types)
-
     const [newPokemon, setNewPokemon] = useState({
         name: "",
         hp: "",

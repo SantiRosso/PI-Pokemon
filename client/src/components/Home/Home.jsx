@@ -26,6 +26,9 @@ import {TfiAngleLeft, TfiAngleRight} from "react-icons/tfi"
 
 
 const Home = () => {
+
+    const width = window.innerWidth;
+    console.log(width)
     const {
         logout
     } = useAuth();
@@ -55,7 +58,7 @@ const Home = () => {
 
     //PAGINATION 
     const [page, setPage] = useState(1);
-    const [perPage] = useState(4);
+    const [perPage] = useState(width > 800 ? 4 : 1);
     let max = Math.ceil(functionalities.length - perPage + 1 / perPage)
 
     const nextPage = () => {
@@ -78,9 +81,9 @@ const Home = () => {
             <div className={s.carrousel}>
                 <Button icon={<TfiAngleLeft/>} click={previousPage} disabled={page === 1} /* hidden={page === 1} *//>
                 {
-                    functionalities.slice(page - 1, (page - 1) + perPage).map((e) => {
+                    functionalities.slice(page - 1, (page - 1) + perPage).map((e, i) => {
                         return(
-                            <HomeCard name={e.name} image={e.image} route={e.route} onClick={e.onClick}/>
+                            <HomeCard key={i} name={e.name} image={e.image} route={e.route} onClick={e.onClick}/>
                         )
                     })
                 }
