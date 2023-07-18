@@ -105,4 +105,9 @@
     .types{
         font-size: x-small;
     }
+
+    .input{
+        width: 75%;
+        height: 3vh;
+    }
 }
